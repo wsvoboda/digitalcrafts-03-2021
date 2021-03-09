@@ -5,3 +5,5 @@ I am editing this file!
 I already uploaded this file to GitHub for the first time. Now I am testing what happens after we make changes and push the commit.
 
 Testing uploading easily through VSC.
+
+Becoming a developer!
