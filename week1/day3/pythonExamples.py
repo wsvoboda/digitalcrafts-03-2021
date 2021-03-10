@@ -18,4 +18,15 @@ print("Whitney | Grapevine, TX")
 
 print(classSize)
 
-somethingToCallIt = "This is a cool variable"
+somethingToCallIt = ["Students", 23, True]
+somethingToCallIt = {"Hello Python World": 23, "We are students": 24.5}
+
+print(somethingToCallIt)
+print(somethingToCallIt)
+print(variableName)
+
+dirPlusTeacher = 4
+sumoOfClass = dirPlusTeacher + classSize
+
+print("The size of our class is " + str(sumoOfClass))
+print("The size of our class is ", sumoOfClass)
