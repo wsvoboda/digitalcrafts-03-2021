@@ -42,9 +42,7 @@ elif (operator == "-"):
 else:
     print("I don't understand that operand.")
 
-quitQuestion = input("Press q to quit or c to continue.")
+# quitQuestion = input("Press q to quit or c to continue. ")
 
-def quitFunction():
-    return print("Thank you for using the calculator")
-
-def
+# def quitFunction():
+#     return print("Thank you for using the calculator")

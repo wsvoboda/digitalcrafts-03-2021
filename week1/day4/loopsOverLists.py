@@ -1,12 +1,11 @@
-pets = ["kitty", "doggy", "birb", "pikachu"]
-otherPets = ["mouse", "iguana", "rabbit"]
+# pets = ["kitty", "doggy", "birb", "pikachu"]
+# otherPets = ["mouse", "iguana", "rabbit"]
 
 # print(len(pets)) # gives the number of items in the list called "pets"
 
 # Loop over a list - go over list and do something with every item in list 
 
 # index = 0
-
 # while index < len(pets): # while 0 is < 4
 #     pet = pets[index] 
 #     print("What pet are you? I'm a %s" % pet)
@@ -22,7 +21,7 @@ otherPets = ["mouse", "iguana", "rabbit"]
 # count = 0
 # for pet in pets: #creates variable pet. pet in pets, user in users, address in addresses; the singular of the list
 #     print("What pet are you? I'm a %s" % pet)
-#     print(count)
+#     # print(count)
 #     count += 1
 
 # for pet in otherPets:
@@ -30,8 +29,8 @@ otherPets = ["mouse", "iguana", "rabbit"]
 
 # # How do we combine lists
 
-# combinedLists = pets + otherPets # combine lists
-# print(combinedLists)
+# combinedList = pets + otherPets # combine lists
+# print(combinedList)
 
 # pets[0] = "otter" # replaces "kitty" with "otter"
 # print(pets)
