@@ -59,6 +59,10 @@ print(car["engineChoices"][1]["v6"]["horsepower"])
 print(car["engineChoices"][2]["v8"]["horsepower"])
 print(car["engineChoices"][3]["v12"]["horsepower"])
 
+# for hpValue in car["engineChoices"]: # teammate method
+#     for key,value in hpValue.items():
+#         print(value["horsepower"])
+
 # check if a "trim" key exists in dictionary
 
 if "trim" in car:
@@ -66,35 +70,12 @@ if "trim" in car:
 else:
     print("not present")
 
+# print("trim" in car.values()) # teammate method
+
 # add new key called "colors" with list of 4 color strings
 
 car["colors"] = ["white", "black", "blue", "red"]
 
+# car.update({"colors": ["white", "black", "blue", "red"]}) # teammate method
+
 print(car)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # to add a new key called "dividends" equal to 4, do this:
-
-# stocks["dividends"] = 4
-# print(stocks)
-
-# # to update an existing key, do the same:
-
-# stocks["volume"] = 50
-# print(stocks)
