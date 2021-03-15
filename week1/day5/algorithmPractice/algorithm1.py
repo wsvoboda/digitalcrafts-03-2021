@@ -8,4 +8,5 @@ for n, i in enumerate(listOfNumbers):
     elif (i % 3 == 0):
         listOfNumbers[n] = "Fizz"
 
-print(listOfNumbers)
+for numbers in listOfNumbers:
+    print(numbers)
