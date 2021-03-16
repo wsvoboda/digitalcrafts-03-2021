@@ -110,5 +110,124 @@ def bottleLine(i):
 
 bottleLine(99)
 
+# print sum of numbers in list
+
+listOfNumbers = [1, 6, 8, 10, 34, 4, 67]
+
+def sumOfNumbers(list):
+    total = 0
+    for num in list:
+        total = total + num
+    print(total)
+
+sumOfNumbers(listOfNumbers)
+
+# print positive numbers from list of numbers
+
+listOfNumbers = [-1, 6, 8, -10, 34, -4, 67, 0]
+
+def positiveNumbers(list):
+    positiveNums = []
+    for num in list:
+        if num >= 0:
+            positiveNums.append(num)
+    print(positiveNums)
+
+positiveNumbers(listOfNumbers)
+
+# take a list of numbers and multiply all numbers by a number
+
+listOfNumbers = [1, 6, 8, 10, 34, 4, 67]
+
+def multiplyNumbers(list, factor):
+    multipliedNumbers = []
+    for num in list:
+        multipliedNumbers.append(num * factor)
+    print(multipliedNumbers)
+
+multiplyNumbers(listOfNumbers, 3)
+
+# take a list, flip it, and reverse it :P
+
+stringToReverse = "Howdy There Folks"
+
+def flipList(string):
+    return print(string[::-1])
+
+flipList(stringToReverse)
+
+# mutliply vectors
+
+matrix1 = [2, 4, 5]
+matrix2 = [2, 3, 6]
+
+def multiplyMatrices(m1, m2):
+    resultingMatrix = []
+    i = 0
+    while i < 3:
+        resultingMatrix.append(m1[i] * m2[i])
+        i += 1
+    print(resultingMatrix)
+
+multiplyMatrices(matrix1, matrix2)
+
+#  remove duplicates from list of strings
+
+listToDeDup = ["carrot", "beet", "potato", "tomato", "pumpkin", "potato", "zucchini", "carrot"]
+
+def deDup(list):
+    newList = []
+    for string in list:
+        if string not in newList:
+            newList.append(string)
+    return print(newList)
+
+deDup(listToDeDup)
+
+# convert to leetspeak
+
+stringToConvert = "I am practicing functions!"
+
+def leetSpeak(string):
+    replacements = (("a", "4"), ("e", "3"), ("g", "6"), ("i", "1"), ("I", "1"), ("o", "0"), ("s", "5"), ("t", "7"))
+    newLeetString = string
+    for old, new in replacements:
+        newLeetString = newLeetString.replace(old, new)
+    print(newLeetString)
+
+leetSpeak(stringToConvert)
+
+# replacing double vowels with 5 of the same vowel (ex: good = goooood)
+
+vowels = "This cheese is good"
+
+def doubleVowels(string):
+    replacements = (("aa", "aaaaa"), ("ee", "eeeee"), ("ii", "iiiii"), ("oo", "ooooo"), ("u", "uuuuu"))
+    newVowelString = string
+    for old, new in replacements:
+        newVowelString = newVowelString.replace(old, new)
+    print(newVowelString)
+
+doubleVowels(vowels)
+
+doubleVowels("spoon")
+
+# Cesar Cipher ROT13 - I found this solution online and don't understand it very well
+
+toDecipher = "lbh zhfg hayrnea jung lbh unir yrnearq"
+
+def caesar(plainText, shift): 
+  cipherText = ""
+  for letters in plainText:
+    if letters.isalpha():
+      stayInAlphabet = ord(letters) + shift 
+      if stayInAlphabet > ord('z'):
+        stayInAlphabet -= 26
+      finalLetter = chr(stayInAlphabet)
+      cipherText += finalLetter
+  print("Your ciphertext is: ", cipherText)
+  return cipherText
+
+caesar(toDecipher, 13)
 
 
