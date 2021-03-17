@@ -1,15 +1,14 @@
 # 1
-# Create a User class, that has the  ability to print the users name
-# the ability to print the users age
+# Create a User class, that has the ability to print the users name and age
 
 # 2
-# Create a TempUser class, that has the ability to only print his name.
+# Create a TempUser class, that has the ability to only print their name
 
 # 3
-#Create a function that as you to give the user a name, and give the 
-# user an age, and will then create the user for you, and print it to 
+# Create a function that as you to give the user a name, and give the 
+# user an age, it will then create the user for you, and print it to 
 # the screen. The user will have a choice to either be a temp user 
-# or a User
+# or a user
 
 class User:
     def __init__(self, name, age):
@@ -70,6 +69,7 @@ class Buildings:
         self.capacity = capacity
         self.sqft = sqft
         self.type = "commercial"
+        
     def printBuildingInfo(self):
         print(f"Your building is {self.height} ft tall, has a capacity of {self.capacity}, and has {self.sqft} sq ft. It is a {self.type} building.")
 
@@ -89,4 +89,4 @@ def makeNewBuilding():
 counter = 0
 while counter < 5:
     makeNewBuilding()
-    counter += 1
+    counter += 1 
