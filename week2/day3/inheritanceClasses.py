@@ -54,16 +54,16 @@ xvg.goToTheMoon()
 xvg.print()
 xvg.sendYourPersonalDataThroughALeak()
 
-# yen = Currency("Yen", "Japan", 20, 10)
-# dollar = Currency("Dollar", "USA", 1, 10)
-# krona = Currency("Krona", "Sweden", 7, 10)
+yen = Currency("Yen", "Japan", 20, 10)
+dollar = Currency("Dollar", "USA", 1, 10)
+krona = Currency("Krona", "Sweden", 7, 10)
 
-# print(yen)
+print(yen)
 
-# print(f"The value of the {yen.name} from {yen.nation} is {yen.price}.")
+print(f"The value of the {yen.name} from {yen.nation} is {yen.price}.")
 
-# yen.print()
-# dollar.print()
-# krona.print()
+yen.print()
+dollar.print()
+krona.print()
 
-# krona.addQuantity(20)
+krona.addQuantity(20)
