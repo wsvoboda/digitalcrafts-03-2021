@@ -5,6 +5,7 @@ class Pet:
         self.happiness = happiness
         self.hunger = hunger
         self.mopiness = mopiness
+        self.toys = []
     
     def eatFood(self):
         self.fullness += 30
@@ -17,6 +18,8 @@ class Pet:
     def beAlive(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
+        for toy in self.toys:
+            self.happiness += toy.use()
         print(f"Just from being alive, {self.name}'s fullness was reduced by {self.hunger} and is now {self.fullness}. {self.name}'s happiness reduced by {self.mopiness} and is now {self.happiness}.")
     
     def showStats(self):
@@ -28,8 +31,9 @@ class Pet:
         Fullness: %d
         Happiness: %d
         """ % (self.name, self.fullness, self.happiness)
-
-
+    
+    def getToy(self, toy):
+        self.toys.append(toy)
 
 class CuddlyPet(Pet): # tells Python that CuddlyPet inherits from Pet class. CuddlyPet is a subclass.
     def cuddle(self, otherPet): # otherPet is the target of the cuddle
@@ -38,6 +42,20 @@ class CuddlyPet(Pet): # tells Python that CuddlyPet inherits from Pet class. Cud
     def beAlive(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness/2 # CuddlyPet will stay happy twice as long as a Pet. This override the beAlive method in Pet.
+        for toy in self.toys:
+            self.happiness += toy.use()
+        print(f"Just from being alive, {self.name}'s fullness was reduced by {self.hunger} and is now {self.fullness}. {self.name}'s happiness reduced by {self.mopiness/2} and is now {self.happiness}.")
+
+class Toy:
+    def __init__(self, bonus=10, newness=10):
+        self.bonus = 10
+        self.newness = 10
+    def use(self):
+        if self.newness == 0:
+            return 0
+        else:
+            self.newness -= 1
+            return self.bonus
 
 pets = []
 
@@ -46,6 +64,7 @@ mainMenu = [
     "Play with Pet", 
     "Feed Pet", 
     "View status of pets",
+    "Give a toy to all your pets",
     "Do nothing",
     ]
 
@@ -101,15 +120,12 @@ def main():
                 print(pet)
         if choice == 5:
             for pet in pets:
+                pet.getToy(Toy())
+        if choice == 6:
+            for pet in pets:
                 pet.beAlive()
 
 main()
-
-
-
-
-
-
 
 ############ practicing functionality below ############
 
