@@ -26,11 +26,11 @@ class Pet:
         print(f"{self.name}'s happiness level is {self.happiness} and fullness level is {self.fullness}.")
     
     def __str__(self):
-        return """
-        %s:
-        Fullness: %d
-        Happiness: %d
-        """ % (self.name, self.fullness, self.happiness)
+        return f"""
+        {self.name}:
+        Fullness: {self.fullness}
+        Happiness: {self.happiness}
+        """
     
     def getToy(self, toy):
         self.toys.append(toy)
