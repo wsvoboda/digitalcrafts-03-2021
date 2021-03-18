@@ -50,8 +50,8 @@
 class GoodGuy:
     def __init__(self, name, power, defense, life):
         self.name = name
-        self.power = power
-        self.defense = defense
+        # self.power = power
+        # self.defense = defense
         self.life = life # "life points"
     
     def __str__(self):
