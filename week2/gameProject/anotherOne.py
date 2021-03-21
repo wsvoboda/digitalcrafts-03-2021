@@ -11,11 +11,7 @@ class Character:
         print(f"The troll attacked! You lost {damageDone} health points.\n")
 
 
-class Troll:
-    def __init__(self, name, life):
-        self.name = name
-        self.life = life
-    
+class Troll(Character):
     def takeDamage(self):
         damageDone = randint(1,7)
         self.life -= damageDone
