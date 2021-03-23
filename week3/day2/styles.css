@@ -33,3 +33,18 @@ body {
   font-size: 20px;
   color: red;
 }
+
+.exampleWeGonnaUse {
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+}
+
+.paragraphInsideTheDiv {
+  text-align: center;
+  color: white;
+  background-color: maroon;
+  margin: 10px 10px 10px 10px;
+  padding: 20px;
+}
