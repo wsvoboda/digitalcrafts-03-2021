@@ -1,0 +1,35 @@
+/* whatyouwanttotarget {
+            key:value;
+        } */
+
+/* you can target elements with CSS */
+
+h1 {
+  font-size: 50px;
+  background-color: tan;
+}
+
+body {
+  background-color: tomato;
+}
+*/
+
+/* to target a class, you will use dot notation */
+
+.nameHeader {
+  color: yellow;
+}
+
+.dateOfBirth {
+  height: 50px;
+  border: 5px solid greenyellow;
+  background-color: brown;
+}
+
+/* Use an id to target an element as well */
+
+#city {
+  font-style: italic;
+  font-size: 20px;
+  color: red;
+}
