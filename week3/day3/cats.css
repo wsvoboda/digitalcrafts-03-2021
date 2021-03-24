@@ -1,0 +1,27 @@
+/* flex a container to manipulate the elements inside */
+
+.basic-flex {
+  display: flex;
+}
+
+.basic-flex-direction {
+  display: flex;
+  flex-direction: column;
+  /* row, row-reverse, column, column-reverse */
+}
+
+.basic-flex-wrap {
+  display: flex;
+  flex-wrap: wrap; /* without wrap, the pictures will go on and on and you need to scroll to see them all. Options: nowrap (default), wrap, wrap-reverse */
+}
+
+.basic-flex-justify-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* if they all don't fit, you will not see all of the images */
+}
+
+.basic-flex-align-items {
+  display: flex;
+  align-items: center;
+}

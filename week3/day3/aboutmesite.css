@@ -1,0 +1,44 @@
+html {
+  font-family: "Fira Sans", sans-serif;
+  background: url(../day2/images/aboutmebackground.jpg) no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+}
+
+body {
+  background-color: rgb(245, 205, 211);
+  width: 80%;
+  max-width: 800px;
+  min-width: 400px;
+  margin: auto;
+  border: 2px solid white;
+}
+
+img {
+  height: 300px;
+  width: 216px;
+  border: 1px solid white;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-me-paragraph {
+  margin: 10px;
+}
+
+.links li {
+  list-style-type: none;
+}
+
+.links a {
+  text-decoration: none;
+}
