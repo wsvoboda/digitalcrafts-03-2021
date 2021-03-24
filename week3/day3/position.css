@@ -1,0 +1,23 @@
+img {
+  height: 475px;
+  width: 315px;
+}
+
+.positionContainer {
+  /* You are living in your own rules. Will be positioned to what's around it */
+  position: relative;
+  left: 100px;
+}
+
+.secondPositionContainer {
+  /* Will follow its own rules and disregard all other elements. Stays in position specified. Will overlap position fixed  */
+  position: absolute;
+  bottom: -600px;
+}
+
+.inBetweenContainer {
+  /* Fixed stays fixed on the screen no matter how you scroll. Will overlap position relative */
+  position: fixed;
+  bottom: 50px;
+  left: 300px;
+}
