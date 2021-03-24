@@ -1,0 +1,32 @@
+html {
+  background-image: url(images/clouds.jpg);
+  font-family: "Rubik", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+img {
+  height: 280px;
+  width: 224px;
+  float: left;
+  border: 5px solid rgb(115, 162, 214);
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+body {
+  width: 70%;
+  max-width: 800px;
+  min-width: 400px;
+  margin: 2% auto;
+  background-color: white;
+  padding: 0 20px 50px 20px;
+  overflow: auto;
+}
+
+#linkedin {
+  color: blue;
+}

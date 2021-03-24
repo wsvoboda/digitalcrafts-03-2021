@@ -1,0 +1,41 @@
+html {
+  font-family: "Fira Sans", sans-serif;
+}
+
+/* small exercise 1 */
+
+.headerMenu {
+  list-style-type: none;
+  float: right;
+}
+
+.headerMenu > li {
+  float: left;
+  padding-right: 10px;
+}
+
+.header {
+  overflow: auto;
+}
+
+.roses {
+  height: 200px;
+  width: 300px;
+  float: left;
+}
+
+p {
+  font-size: 20px;
+}
+
+.tulips {
+  height: 200px;
+  width: 300px;
+  float: right;
+}
+
+.blackFlower {
+  height: 200px;
+  width: 300px;
+  float: left;
+}
