@@ -1,0 +1,36 @@
+html {
+  font-family: "New Tegomin", serif;
+}
+
+/* Task 1: Create grid container that has 2 rows x 3 columns.  make each item in those rows 120px x 60px.  Make them have a 5px gap. Make a background color for each item of your choice */
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(2, 120px);
+  grid-gap: 5px;
+}
+
+#box1 {
+  background-color: #a91b60;
+}
+
+#box2 {
+  background-color: #ec9ec0;
+}
+
+#box3 {
+  background-color: #a91b60;
+}
+
+#box4 {
+  background-color: #ec9ec0;
+}
+
+#box5 {
+  background-color: #a91b60;
+}
+
+#box6 {
+  background-color: #ec9ec0;
+}

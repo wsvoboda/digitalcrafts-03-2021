@@ -1,0 +1,51 @@
+html {
+  font-family: "New Tegomin", serif;
+}
+
+/* Task 2: Create grid container that has 2 rows x 5 columns, make each item 50px x 40px. Make a background color for each item of your choice */
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(5, 40px);
+  grid-template-rows: repeat(2, 50px);
+}
+
+#box1 {
+  background-color: #a91b60;
+}
+
+#box2 {
+  background-color: #ec9ec0;
+}
+
+#box3 {
+  background-color: #a91b60;
+}
+
+#box4 {
+  background-color: #ec9ec0;
+}
+
+#box5 {
+  background-color: #a91b60;
+}
+
+#box6 {
+  background-color: #ec9ec0;
+}
+
+#box7 {
+  background-color: #a91b60;
+}
+
+#box8 {
+  background-color: #ec9ec0;
+}
+
+#box9 {
+  background-color: #a91b60;
+}
+
+#box10 {
+  background-color: #ec9ec0;
+}

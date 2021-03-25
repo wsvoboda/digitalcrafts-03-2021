@@ -1,0 +1,45 @@
+html {
+  font-family: "New Tegomin", serif;
+}
+
+.main-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 2fr 4fr 1fr;
+  grid-template-rows: 1fr 10fr 1fr;
+  grid-template-areas:
+    "header header header sidebar"
+    "ads content1 content2 sidebar"
+    "footer footer footer sidebar";
+  gap: 5px;
+}
+
+header {
+  grid-area: header;
+  background-color: #013a20;
+}
+
+#content1 {
+  grid-area: content1;
+  background-color: #bacc81;
+}
+
+#content2 {
+  grid-area: content2;
+  background-color: #cdd193;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: #478c5c;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #013a20;
+}
+
+#ads {
+  grid-area: ads;
+  background-color: white;
+}

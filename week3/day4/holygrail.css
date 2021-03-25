@@ -1,0 +1,35 @@
+html {
+  font-family: "New Tegomin", serif;
+}
+
+.main-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 8fr 1fr;
+  grid-template-rows: 1fr 10fr 1fr;
+  grid-template-areas:
+    "header header"
+    "content sidebar"
+    "footer footer";
+  gap: 5px;
+}
+
+header {
+  grid-area: header;
+  background-color: #df362d;
+}
+
+#content {
+  grid-area: content;
+  background-color: #b7ac44;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: #ff4500;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #df362d;
+}
