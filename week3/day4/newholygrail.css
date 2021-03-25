@@ -10,7 +10,7 @@ html {
   grid-template-areas:
     "header header header sidebar"
     "ads content1 content2 sidebar"
-    "footer footer footer sidebar";
+    "ads footer footer sidebar";
   gap: 5px;
 }
 
