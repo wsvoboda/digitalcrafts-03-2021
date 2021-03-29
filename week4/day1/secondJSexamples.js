@@ -56,3 +56,29 @@ for (const car of cars) {
 for (const topping of pizza.toppings) {
   console.log(topping); // prints the toppings from the pizza array
 }
+
+// if statements
+
+// if (condition) {
+//     do this
+// } else if {
+//     do this
+// } else {
+//     do this instead
+// }
+
+let age = 5;
+
+if (age < 5) {
+  console.log("You're too young");
+} else {
+  console.log("You're getting old");
+}
+
+age = 2;
+
+if (age < 5) {
+  console.log("You're too young");
+} else {
+  console.log("You're getting old");
+}
