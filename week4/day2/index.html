@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 101</title>
+  </head>
+  <body id="root">
+    <h1 id="main-header">DOM 101</h1>
+    <ul id="list">
+      <li class="list-item1">User</li>
+      <li class="list-item">About</li>
+      <li class="list-item">Contact</li>
+      <li class="list-item1">Chat</li>
+    </ul>
+  </body>
+  <script>
+    const heading = document.getElementById("main-header");
+    console.log(heading.innerText); // target DOM 101
+    heading.innerText = "He is how old?"; // changes the webpage to say "He is how old?". Not changing or rearranging the string, but changing the object
+    heading.style.color = "pink";
+
+    const newListItem = document.createElement("li");
+    newListItem.innerText = "Blog"; // want to put in ul. Target the element - a. grab the element to view it, b. create a new element and insert it into that html
+    const list = document.getElementById("list");
+    list.append(newListItem);
+    console.log(newListItem);
+
+    const newDiv = document.createElement("div"); // this creates a div, adds input element, then adds it to the page. You can create a function to do this
+    const newInput = document.createElement("input");
+    newDiv.append(newInput);
+    console.log(newDiv);
+    const root = document.getElementById("root");
+    root.append(newDiv);
+
+    const list = document.getElementById("list"); // will get you all elements within the id=list
+    console.log(list);
+    const listItem = document.getElementsByClassName("list-item"); // will get you all elements within the class=list-item
+    console.log(listItem);
+    const liItems = document.getElementsByTagName("li");
+    console.log(liItems);
+    const lastListItem = document.querySelector("#list"); // will get you all elements within the id=list
+    console.log(lastListItem);
+    const lastListItems = document.querySelector(".list-item1"); // will get you the first element
+    console.log(lastListItems);
+    const allItems = document.querySelectorAll(".list-item1"); // creates a node list with this class name and gives contents and length
+    console.log(allItems);
+    const holder = lastListItem;
+    console.log(holder);
+  </script>
+</html>
