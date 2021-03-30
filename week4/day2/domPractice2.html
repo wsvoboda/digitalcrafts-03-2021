@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1 class="header">DOM Practice 2</h1>
+      <label for="number">Number</label>
+      <input
+        onchange="displayValue()"
+        class="input"
+        name="number"
+        type="number"
+      />
+      <button onclick="console.log(`clicked`)" class="button">Submit</button>
+      <h3>Your number is:</h3>
+      <p class="display-number"></p>
+    </div>
+  </body>
+  <script>
+    function displayValue() {
+      const numberTheyEntered = document.querySelector(".input").value; // prints the value entered in the console
+      console.log(numberTheyEntered);
+      const paragraphTargeted = document.querySelector(".display-number");
+      paragraphTargeted.innerHTML = numberTheyEntered;
+      //   console.log("hello");
+    }
+  </script>
+</html>
+
+<!-- goal - take a number from user, feel a click, print number below -->
+<!-- .value can be used to grab the value currently residing inside the element -->
+<!-- event handles can be put on certain html elements -->
+<!-- they will trigger when an event happens -->
+<!-- onchange - triggers when something has changed inside the element  -->
+<!-- onclick - triggers when there is a click  -->
