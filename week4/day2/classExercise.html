@@ -9,16 +9,21 @@
   <body id="bod"></body>
   <script>
     const newDiv = document.createElement("div");
-    newDiv.setAttribute("class", "main-container");
+    newDiv.className = "main-container";
 
     const newList = document.createElement("ul");
-    newList.setAttribute("class", "unordered-list");
+    newList.id = "unordered-list";
 
     const newInput = document.createElement("input");
-    newInput.setAttribute("type", "text");
+    newInput.type = "text";
 
     const newRadio = document.createElement("input");
-    newRadio.setAttribute("type", "radio");
+    newRadio.type = "radio";
+    newRadio.name = "question";
+
+    const newRadioAgain = document.createElement("input");
+    newRadioAgain.type = "radio";
+    newRadioAgain.name = "question";
 
     const li1 = document.createElement("li");
     li1.innerText = "First List Item";
@@ -36,15 +41,14 @@
     li5.innerText = "Fifth List Item";
 
     newList.append(li1, li2, li3, li4, li5);
-    newDiv.append(newList);
-    newDiv.append(newInput);
-    newDiv.append(newRadio);
+    newDiv.append(newList, newInput, newRadio, newRadioAgain);
 
     console.log(newDiv);
 
     // not asked to do this but wanted to see if it translated to the page
 
-    const bod = document.getElementById("bod");
+    // const bod = document.getElementById("bod");
+    const body = document.querySelector("#bod"); // how Joe did it
     bod.append(newDiv);
 
     // not asked to do this but wanted to see if it translated to the page
