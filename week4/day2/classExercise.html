@@ -6,40 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class JS Exercise</title>
   </head>
-  <body></body>
+  <body id="bod"></body>
   <script>
     const newDiv = document.createElement("div");
     newDiv.setAttribute("class", "main-container");
-    console.log(newDiv);
 
     const newList = document.createElement("ul");
     newList.setAttribute("class", "unordered-list");
-    // console.log(newList);
 
     const newInput = document.createElement("input");
-    // console.log(newInput);
+    newInput.setAttribute("type", "text");
 
     const newRadio = document.createElement("input");
-    console.log(newRadio);
+    newRadio.setAttribute("type", "radio");
+
     const li1 = document.createElement("li");
     li1.innerText = "First List Item";
-    // console.log(li1);
+
     const li2 = document.createElement("li");
     li2.innerText = "Second List Item";
-    // console.log(li2);
+
     const li3 = document.createElement("li");
     li3.innerText = "Third List Item";
-    // console.log(li3);
+
     const li4 = document.createElement("li");
     li4.innerText = "Fourth List Item";
-    // console.log(li4);
+
     const li5 = document.createElement("li");
     li5.innerText = "Fifth List Item";
-    // console.log(li5);
 
     newList.append(li1, li2, li3, li4, li5);
-    // console.log(newList);
     newDiv.append(newList);
     newDiv.append(newInput);
+    newDiv.append(newRadio);
+
+    console.log(newDiv);
+
+    // not asked to do this but wanted to see if it translated to the page
+
+    const bod = document.getElementById("bod");
+    bod.append(newDiv);
+
+    // not asked to do this but wanted to see if it translated to the page
   </script>
 </html>
