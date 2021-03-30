@@ -1,5 +1,5 @@
 html {
-  background-color: pink;
+  background-image: linear-gradient(to bottom, pink, rgb(247, 90, 116));
   font-family: "Open Sans Condensed", sans-serif;
 }
 
@@ -51,6 +51,17 @@ html {
   margin-right: 4px;
 }
 
+.tip-list li {
+  font-size: 20px;
+}
+
 input {
   text-align: center;
+  border: none;
+  height: 30px;
+  border-radius: 3px;
+}
+
+label {
+  font-size: 20px;
 }
