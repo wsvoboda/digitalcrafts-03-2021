@@ -49,9 +49,11 @@
 
       const calculatedTipAmount = billAmountEntered * tipPercentageEntered;
 
+      const roundedTip = calculatedTipAmount.toFixed(2);
+
       const newTip = document.createElement("li");
 
-      newTip.innerHTML = calculatedTipAmount;
+      newTip.innerHTML = roundedTip;
 
       const allTipsListed = document.querySelector(".tip-list");
 

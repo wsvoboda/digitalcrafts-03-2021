@@ -16,6 +16,14 @@ html {
   text-align: center;
 }
 
+#bill-amount {
+  margin: 0 10px 0 10px;
+}
+
+#tip-amount {
+  margin: 0 10px 0 10px;
+}
+
 .tips {
   display: grid;
   grid-column: 2/3;
@@ -24,10 +32,25 @@ html {
   margin: 20px;
 }
 
+.tips h1 {
+  height: 30px;
+  width: auto;
+}
+
 .button {
   margin: 10px;
 }
 
+.tip-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tip-list li:before {
+  content: "$";
+  margin-right: 4px;
+}
+
 input {
-  margin: 5px;
+  text-align: center;
 }
