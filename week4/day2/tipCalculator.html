@@ -25,7 +25,7 @@
     </div>
     <div class="tips">
       <h1>Previous Tips</h1>
-      <h3 class="tip-list">$5</h3>
+      <ul class="tip-list"></ul>
     </div>
   </body>
   <script>
@@ -48,10 +48,14 @@
       giveTotal.innerHTML = roundedTotal;
 
       const calculatedTipAmount = billAmountEntered * tipPercentageEntered;
-    }
 
-    // function tipList() {
-    //   const calculatedTipAmount = billAmountEntered * tipPercentageEntered;
-    // }
+      const newTip = document.createElement("li");
+
+      newTip.innerHTML = calculatedTipAmount;
+
+      const allTipsListed = document.querySelector(".tip-list");
+
+      allTipsListed.append(newTip);
+    }
   </script>
 </html>
