@@ -1,0 +1,33 @@
+html {
+  background-color: pink;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.tip-calculator {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  text-align: center;
+}
+
+.tips {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 2/2;
+  text-align: center;
+  margin: 20px;
+}
+
+.button {
+  margin: 10px;
+}
+
+input {
+  margin: 5px;
+}

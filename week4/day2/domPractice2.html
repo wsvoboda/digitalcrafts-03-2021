@@ -10,24 +10,22 @@
     <div class="main-container">
       <h1 class="header">DOM Practice 2</h1>
       <label for="number">Number</label>
-      <input
-        onchange="displayValue()"
-        class="input"
-        name="number"
-        type="number"
-      />
-      <button onclick="console.log(`clicked`)" class="button">Submit</button>
+      <input onchange="" class="input" name="number" type="number" />
+      <button onclick="displayValue()" class="button">Submit</button>
       <h3>Your number is:</h3>
       <p class="display-number"></p>
     </div>
   </body>
   <script>
     function displayValue() {
-      const numberTheyEntered = document.querySelector(".input").value; // prints the value entered in the console
-      console.log(numberTheyEntered);
+      const numberTheyEntered = parseInt(
+        document.querySelector(".input").value
+      );
+      const mutliplication = numberTheyEntered * 3; // make new variable, do math
+      console.log(mutliplication); // show answer in console
       const paragraphTargeted = document.querySelector(".display-number");
       paragraphTargeted.innerHTML = numberTheyEntered;
-      //   console.log("hello");
+      paragraphTargeted.innerHTML = mutliplication; // prints result of multiplcation on page
     }
   </script>
 </html>
