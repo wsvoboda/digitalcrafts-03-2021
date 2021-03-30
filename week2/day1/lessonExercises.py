@@ -202,7 +202,7 @@ leetSpeak(stringToConvert)
 vowels = "This cheese is good"
 
 def doubleVowels(string):
-    replacements = (("aa", "aaaaa"), ("ee", "eeeee"), ("ii", "iiiii"), ("oo", "ooooo"), ("u", "uuuuu"))
+    replacements = (("aa", "aaaaa"), ("ee", "eeeee"), ("ii", "iiiii"), ("oo", "ooooo"), ("uu", "uuuuu"))
     newVowelString = string
     for old, new in replacements:
         newVowelString = newVowelString.replace(old, new)
