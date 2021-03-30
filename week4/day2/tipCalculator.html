@@ -34,11 +34,10 @@
         document.querySelector("#bill-amount").value
       );
 
-      const tipPercentageEntered = Number(
-        document.querySelector("#tip-amount").value
-      );
+      const tipPercentageEntered =
+        Number(document.querySelector("#tip-amount").value) / 100;
 
-      const tipMultiplier = Number(1 + tipPercentageEntered / 100);
+      const tipMultiplier = Number(1 + tipPercentageEntered);
 
       const total = billAmountEntered * tipMultiplier;
 
@@ -47,6 +46,12 @@
       const giveTotal = document.querySelector(".total-amount");
 
       giveTotal.innerHTML = roundedTotal;
+
+      const calculatedTipAmount = billAmountEntered * tipPercentageEntered;
     }
+
+    // function tipList() {
+    //   const calculatedTipAmount = billAmountEntered * tipPercentageEntered;
+    // }
   </script>
 </html>
