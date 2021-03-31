@@ -35,6 +35,7 @@
 
     // creates input box and submit task button
     const newTaskPrompt = document.createElement("input");
+    newTaskPrompt.id = "text-box";
     const newTaskSubmitButton = document.createElement("button");
     newTaskSubmitButton.textContent = "Add to List";
     welcomeContainer.append(newTaskPrompt, newTaskSubmitButton);
@@ -66,7 +67,7 @@
       const newlyAddedTask = document.createElement("li");
       newlyAddedTask.innerHTML = newTaskPrompt.value;
       listOfTasks.append(newlyAddedTask);
-      //   document.getElementById("input").value = "";
+      document.getElementById("text-box").value = "";
     }
 
     newTaskSubmitButton.addEventListener("click", addNewTask);
