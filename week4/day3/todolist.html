@@ -73,7 +73,10 @@
       taskHeaderHolder.innerHTML = "Your To Do List";
       const listOfTasks = document.querySelector(".main-list");
       const newlyAddedTask = document.createElement("li");
+      const checkboxes = document.createElement("input");
+      checkboxes.type = "checkbox";
       newlyAddedTask.innerHTML = newTaskPrompt.value;
+      newlyAddedTask.prepend(checkboxes);
       listOfTasks.append(newlyAddedTask);
       document.getElementById("text-box").value = "";
     }
