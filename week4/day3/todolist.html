@@ -9,15 +9,38 @@
   </head>
   <body>
     <div class="main-container">
-      <h1 class="welcome"></h1>
-      <button class="changeUser">Change User</button>
-      <button class="addTask">Click Here to Add a Task</button>
-      <h1 class="taskList"></h1>
-      <ul class="main-list"></ul>
+      <div class="welcomeDiv">
+        <h1 class="welcome"></h1>
+      </div>
+      <div class="tasksDiv">
+        <u><h1 class="taskList"></h1></u>
+        <ul class="main-list"></ul>
+      </div>
     </div>
   </body>
   <script>
-    const myButton = document.querySelector(".changeUser");
+    //   creates change user button
+    const welcomeContainer = document.querySelector(".welcomeDiv");
+    const changeUserButton = document.createElement("button");
+    changeUserButton.class = "changeUser";
+    changeUserButton.textContent = "Change User";
+    welcomeContainer.append(changeUserButton);
+    //
+
+    // creates header above input box
+    const enterTaskHeading = document.createElement("h3");
+    enterTaskHeading.textContent = "Enter a New Task Below:";
+    welcomeContainer.append(enterTaskHeading);
+    //
+
+    // creates input box and submit task button
+    const newTaskPrompt = document.createElement("input");
+    const newTaskSubmitButton = document.createElement("button");
+    newTaskSubmitButton.textContent = "Add to List";
+    welcomeContainer.append(newTaskPrompt, newTaskSubmitButton);
+    //
+
+    // asks for users name,stores it, and puts it in header
     const myHeading = document.querySelector(".welcome");
 
     function setUserName() {
@@ -29,7 +52,6 @@
         myHeading.textContent = `Welcome to your To Do List, ${myName}!`;
       }
     }
-
     if (!localStorage.getItem("name")) {
       setUserName();
     } else {
@@ -37,19 +59,15 @@
       myHeading.textContent = "Welcome to your To Do List, " + storedName + "!";
     }
 
-    myButton.onclick = function () {
-      setUserName();
-    };
-
-    function addTask() {
-      const mainContainer = document.querySelector(".main-container");
-      const newTaskPrompt = document.createElement("input");
-      const newTaskSubmitButton = document.createElement("button");
-      newTaskSubmitButton.textContent = "Submit to List";
-      mainContainer.append(newTaskPrompt, newTaskSubmitButton);
-      const
+    function addNewTask() {
+      const taskHeaderHolder = document.querySelector(".taskList");
+      taskHeaderHolder.innerHTML = "Your To Do List";
+      const listOfTasks = document.querySelector(".main-list");
+      const newlyAddedTask = document.createElement("li");
+      newlyAddedTask.innerHTML = newTaskPrompt.value;
+      listOfTasks.append(newlyAddedTask);
     }
 
-    addTask();
+    newTaskSubmitButton.addEventListener("click", addNewTask);
   </script>
 </html>
