@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="todolist.css" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1 class="welcome"></h1>
+      <button class="changeUser">Change User</button>
+      <button class="addTask">Click Here to Add a Task</button>
+      <h1 class="taskList"></h1>
+      <ul class="main-list"></ul>
+    </div>
+  </body>
+  <script>
+    const myButton = document.querySelector(".changeUser");
+    const myHeading = document.querySelector(".welcome");
+
+    function setUserName() {
+      let myName = prompt("What is your name?");
+      if (!myName) {
+        setUserName();
+      } else {
+        localStorage.setItem("name", myName);
+        myHeading.textContent = `Welcome to your To Do List, ${myName}!`;
+      }
+    }
+
+    if (!localStorage.getItem("name")) {
+      setUserName();
+    } else {
+      let storedName = localStorage.getItem("name");
+      myHeading.textContent = "Welcome to your To Do List, " + storedName + "!";
+    }
+
+    myButton.onclick = function () {
+      setUserName();
+    };
+
+    function addTask() {
+      const mainContainer = document.querySelector(".main-container");
+      const newTaskPrompt = document.createElement("input");
+      const newTaskSubmitButton = document.createElement("button");
+      newTaskSubmitButton.textContent = "Submit to List";
+      mainContainer.append(newTaskPrompt, newTaskSubmitButton);
+      const
+    }
+
+    addTask();
+  </script>
+</html>
