@@ -50,16 +50,18 @@
         setUserName();
       } else {
         localStorage.setItem("name", myName);
-        myHeading.textContent = `Welcome to your To Do List, ${myName}!`;
+        myHeading.textContent = `Welcome to Your To Do List, ${myName}!`;
       }
     }
     if (!localStorage.getItem("name")) {
       setUserName();
     } else {
       let storedName = localStorage.getItem("name");
-      myHeading.textContent = "Welcome to your To Do List, " + storedName + "!";
+      myHeading.textContent = "Welcome to Your To Do List, " + storedName + "!";
     }
+    //
 
+    // takes tasks and adds them to a list
     function addNewTask() {
       const taskHeaderHolder = document.querySelector(".taskList");
       taskHeaderHolder.innerHTML = "Your To Do List";
@@ -69,7 +71,10 @@
       listOfTasks.append(newlyAddedTask);
       document.getElementById("text-box").value = "";
     }
+    //
 
+    // calls function when button is clicked
     newTaskSubmitButton.addEventListener("click", addNewTask);
+    //
   </script>
 </html>
