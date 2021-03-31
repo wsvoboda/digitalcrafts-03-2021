@@ -33,7 +33,7 @@
     //
 
     // creates header above input box
-    const enterTaskHeading = document.createElement("h3");
+    const enterTaskHeading = document.createElement("h2");
     enterTaskHeading.textContent = "Enter a New Task Below:";
     welcomeContainer.append(enterTaskHeading);
     //
@@ -42,6 +42,7 @@
     const newTaskPrompt = document.createElement("input");
     newTaskPrompt.id = "text-box";
     const newTaskSubmitButton = document.createElement("button");
+    newTaskSubmitButton.id = "submitButton";
     newTaskSubmitButton.textContent = "Add to List";
     welcomeContainer.append(newTaskPrompt, newTaskSubmitButton);
     //

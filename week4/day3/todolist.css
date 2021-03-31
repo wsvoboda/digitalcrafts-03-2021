@@ -1,28 +1,51 @@
 html {
   font-family: "Josefin Sans", sans-serif;
+  background-image: linear-gradient(to bottom right, pink, red);
 }
 
 .main-container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vh;
-  background-color: #b4f8c8;
+  margin: auto;
 }
 
 .welcomeDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
   padding: 2rem;
-  background-color: lightblue;
 }
 
-.taskDiv {
+.tasksDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
   padding: 2rem;
-  background-color: lightblue;
+}
+
+#submitButton {
+  margin-top: 10px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+li {
+  font-size: 20px;
+}
+
+input {
+  border-radius: 3px;
+  border: none;
+  height: 30px;
+  width: 200px;
+  text-align: center;
+}
+
+button {
+  background-color: rgb(219, 228, 169);
+  border-radius: 4px;
 }
