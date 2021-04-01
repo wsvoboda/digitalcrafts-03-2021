@@ -1,0 +1,30 @@
+h1 {
+  color: darkslategray;
+}
+
+#email-input {
+  height: 40px;
+  font-size: 25px;
+  width: 450px;
+  margin: 5px;
+}
+
+#name-input {
+  height: 40px;
+  font-size: 25px;
+  width: 450px;
+  margin: 5px;
+}
+
+#password-input {
+  height: 40px;
+  font-size: 25px;
+  width: 450px;
+  margin: 5px;
+}
+
+.jsform {
+  margin-top: 20px;
+  display: grid;
+  place-items: center;
+}
