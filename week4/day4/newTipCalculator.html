@@ -34,15 +34,18 @@
   </body>
   <script>
     const form = document.querySelector("form");
-    const validateNumbers = (total, tip) => {
+    const validateNumbers = (number) => {
       myRegex = /^(0|[1-9]\d*)?(\.\d+)?(?<=\d)$/;
-      return myRegex.test(total, tip);
+      return myRegex.test(number);
     };
 
     form.addEventListener("submit", (event) => {
       const billInput = document.querySelector("#bill-amount");
       const tipInput = document.querySelector("#tip-amount");
-      if (!validateNumbers(billInput.value, tipInput.value)) {
+      if (
+        !validateNumbers(billInput.value) ||
+        !validateNumbers(tipInput.value)
+      ) {
         event.preventDefault();
         alert("Please enter numerical values only");
       } else {
