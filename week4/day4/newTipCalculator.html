@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Tip Calculator</title>
+    <title>New Tip Calculator</title>
   </head>
   <body class="main-container">
     <div class="tip-calculator">
@@ -21,7 +21,7 @@
           <input id="bill-amount" name="bill-amount" type="text" />
           <label for="tip-amount">Tip Amount (in %):</label>
           <input id="tip-amount" name="tip-amount" type="text" />
-          <button type="submit" class="submit">Calculate Total</button>
+          <button class="submit" type="submit">Calculate Total</button>
         </fieldset>
       </form>
       <h3 class="total-amount-owed">The total amount with tip is:</h3>
@@ -45,6 +45,9 @@
       if (!validateNumbers(billInput.value, tipInput.value)) {
         event.preventDefault();
         alert("Please enter numerical values only");
+      } else {
+        calculate();
+        event.preventDefault();
       }
     });
 
@@ -54,30 +57,17 @@
       );
       const tipPercentageEntered =
         Number(document.querySelector("#tip-amount").value) / 100;
-
       const tipMultiplier = Number(1 + tipPercentageEntered);
-
       const total = billAmountEntered * tipMultiplier;
-
       const roundedTotal = total.toFixed(2);
-
       const giveTotal = document.querySelector(".total-amount");
-
       giveTotal.innerHTML = `$ ${roundedTotal}`;
-
       const calculatedTipAmount = billAmountEntered * tipPercentageEntered;
-
       const roundedTip = calculatedTipAmount.toFixed(2);
-
       const newTip = document.createElement("li");
-
       newTip.innerHTML = roundedTip;
-
       const allTipsListed = document.querySelector(".tip-list");
-
       allTipsListed.append(newTip);
     };
-
-    form.addEventListener("submit", calculate);
   </script>
 </html>
