@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div class="first-exercise-input-required">
+      <fieldset>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" name="name" required />
+          <button type="submit">Submit</button>
+        </form>
+      </fieldset>
+    </div>
+    <div class="second-exercise-age-limitation">
+      <fieldset>
+        <form>
+          <label for="age">Age</label>
+          <input type="number" name="age" min="0" max="100" />
+          <button type="submit">Submit</button>
+        </form>
+      </fieldset>
+    </div>
+    <div class="third-exercise-error-on-length">
+      <fieldset>
+        <form>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            title="Username cannot use more than 15 characters"
+            pattern="[A-Za-z0-9]{1,15}"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </fieldset>
+    </div>
+    <div class="fourth-exercise-form-with-light-validation">
+      <fieldset>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" name="name" required minlength="5" /><br />
+          <label for="password">Password</label>
+          <input type="password" required minlength="6" maxlength="15" /><br />
+          <label for="email">Email</label>
+          <input type="email" required /><br />
+          <label for="about-me">Tell Me About Yourself</label>
+          <textarea
+            name="about-me"
+            maxlength="250"
+            title="Please use 250 characters or less"
+            required
+          ></textarea
+          ><br />
+          <label for="robot-check"
+            >Please Type: <strong>I am a human</strong></label
+          >
+          <input id="robot-check" type="text" pattern="I am a human" />
+          <button type="submit">Submit</button>
+        </form>
+      </fieldset>
+    </div> -->
+    <div class="fifth-exercise-form-with-regex-validation">
+      <fieldset>
+        <form>
+          <label for="name">Username</label>
+          <input type="text" id="name" name="name" required /><br />
+          <label for="password">Password</label>
+          <input type="password" id="password" required /><br />
+          <label for="email">Email</label>
+          <input type="text" required id="email" /><br />
+          <label for="about-me">Tell Me About Yourself</label>
+          <textarea
+            name="about-me"
+            id="textarea"
+            required
+            maxlength="250"
+          ></textarea
+          ><br />
+          <label for="robot-check">Please Type: <b>I am a human</b></label>
+          <input id="robot-check" type="text" pattern="I am a human" />
+          <button type="submit">Submit</button>
+        </form>
+      </fieldset>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+
+    const checkName = (name) => {
+      myRegex = /^[A-Za-z0-9]{5,20}$/;
+      return myRegex.test(name);
+    };
+
+    const checkPassword = (password) => {
+      myRegex = /^[A-Za-z0-9]{6,15}$/;
+      return myRegex.test(password);
+    };
+
+    const checkEmail = (email) => {
+      myRegex = /^\S+@\S+$/;
+      return myRegex.test(email);
+    };
+
+    const checkAboutMe = (aboutme) => {
+      regex = /^([A-Za-z0-9]+\.[A-Za-z0-9]+(\r)?(\n)?)+{1,250}$/; // length check doesn't work
+      return myRegex.test(aboutme);
+    };
+
+    form.addEventListener("submit", (event) => {
+      const nameInput = document.querySelector("#name");
+      if (!checkName(nameInput.value)) {
+        event.preventDefault();
+        alert("Please create a username using at least 5 characters");
+        return;
+      }
+      const passwordInput = document.querySelector("#password");
+      if (!checkPassword(passwordInput.value)) {
+        event.preventDefault();
+        alert("Please create a password using between 6 and 15 characters");
+        return;
+      }
+      const emailInput = document.querySelector("#email");
+      if (!checkEmail(emailInput.value)) {
+        event.preventDefault();
+        alert("Please enter a valid email address");
+        return;
+      }
+      const aboutMeInput = document.querySelector("#textarea");
+      if (!checkAboutMe(aboutMeInput.value)) {
+        event.preventDefault();
+        alert(
+          "Please enter some information about you using at least 1 character and a maximum of 250 characters"
+        );
+        return;
+      }
+    });
+  </script>
+</html>
