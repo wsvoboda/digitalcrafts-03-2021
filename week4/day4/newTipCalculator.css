@@ -1,5 +1,9 @@
 html {
-  background-image: linear-gradient(to bottom, pink, rgb(247, 90, 116));
+  background: url(happy-sushi.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: "Open Sans Condensed", sans-serif;
 }
 
@@ -14,6 +18,8 @@ html {
   grid-column: 2/3;
   grid-row: 1/2;
   text-align: center;
+  background-color: rgb(106, 216, 148);
+  border-radius: 4px;
 }
 
 #bill-amount {
@@ -29,7 +35,9 @@ html {
   grid-column: 2/3;
   grid-row: 2/2;
   text-align: center;
-  margin: 20px;
+  margin-top: 20px;
+  background-color: rgb(106, 216, 148);
+  border-radius: 4px;
 }
 
 .tips h1 {
@@ -42,7 +50,7 @@ html {
 }
 
 .tip-list {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
@@ -68,4 +76,8 @@ label {
 
 fieldset {
   border: none;
+}
+
+button {
+  margin-top: 5px;
 }
