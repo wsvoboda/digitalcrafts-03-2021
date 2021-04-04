@@ -1,24 +1,24 @@
 //  want a function to take string and reverse it
 
-const string = "hi there";
-const string1 = "hello";
-const string3 = "hello hello hellooooo";
+// const string = "hi there";
+// const string1 = "hello";
+// const string3 = "hello hello hellooooo";
 
-const stringReversal = (str) => {
-  const stringToList = str.split("");
+// const stringReversal = (str) => {
+//   const stringToList = str.split("");
 
-  var returnArray = [];
-  for (var i = str.length - 1; i >= 0; i--) {
-    returnArray.push(str[i]);
-  }
-  const completedReverseString = returnArray.join("");
+//   var returnArray = [];
+//   for (var i = str.length - 1; i >= 0; i--) {
+//     returnArray.push(str[i]);
+//   }
+//   const completedReverseString = returnArray.join("");
 
-  return completedReverseString;
-};
+//   return completedReverseString;
+// };
 
-console.log(stringReversal(string));
-console.log(stringReversal(string1));
-console.log(stringReversal(string3));
+// console.log(stringReversal(string));
+// console.log(stringReversal(string1));
+// console.log(stringReversal(string3));
 
 //
 
@@ -38,17 +38,9 @@ console.log(stringReversal(string3));
 
 // const noSignNumber = changeSign(number);
 
-// console.log(noSignNumber); // works
-
 // const numberAsString = noSignNumber + "";
 
-// // console.log(numberAsString);
-
-// // console.log(typeof numberAsString); // confirms it changes it to a string
-
 // const arrayOfNums = numberAsString.split("");
-
-// console.log(arrayOfNums);
 
 // const reverseArray = (input) => {
 //   var returnArray = [];
@@ -60,13 +52,9 @@ console.log(stringReversal(string3));
 
 // const newReversedArray = reverseArray(arrayOfNums);
 
-// console.log(newReversedArray); // testing
-
 // const arrayToString = newReversedArray.join("");
 
 // const noZeros = arrayToString.replace(/^0+|0+$/g, "");
-
-// console.log(noZeros);
 
 // const backToNumber = Number(noZeros);
 
@@ -83,3 +71,23 @@ console.log(stringReversal(string3));
 // const finalResult = changeSignBack(backToNumber);
 
 // console.log(finalResult);
+
+// answer from class
+
+const integerReversal = (num) => {
+  const noZeros = num.toString().replace(/^0+(\d)|(\d)0+$/gm, "$1$2");
+  const reversedString = noZeros.split("").reverse();
+  let result;
+  if (reversedString[reversedString.length - 1] === "-") {
+    reversedString.pop();
+    result = Number(reversedString.join("")) * -1;
+  } else {
+    result = Number(reversedString.join(""));
+  }
+  return result;
+};
+
+console.log(integerReversal(485));
+console.log(integerReversal(0076));
+console.log(integerReversal(-756.65));
+console.log(integerReversal(7560.0));
