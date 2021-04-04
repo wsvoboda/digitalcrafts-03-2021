@@ -45,7 +45,6 @@
     </div>
   </body>
   <script>
-    // asks for users name,stores it, and puts it in header
     const myHeading = document.querySelector(".welcome");
     const changeUserButton = document.querySelector(".changeUser");
     const newTaskSubmitButton = document.querySelector("#submitButton");
@@ -72,9 +71,11 @@
     // takes tasks and adds them to a list
     const addNewTask = () => {
       const taskHeaderHolder = document.querySelector(".taskList");
-      taskHeaderHolder.innerHTML = "Your To Do List";
+      taskHeaderHolder.innerHTML = "Your To Do List"; // adds header to newly made list
       const deleteButton = document.createElement("button");
       deleteButton.innerHTML = "Delete Selected Task(s)";
+      const tasksDiv = document.querySelector(".tasksDiv");
+      tasksDiv.append(deleteButton);
       const lowPriorityButton = document.getElementById("low");
       const medPriorityButton = document.getElementById("medium");
       const highPriorityButton = document.getElementById("high");
@@ -108,8 +109,8 @@
 
     // calls function to add task when button is clicked
     form.addEventListener("submit", (event) => {
-      event.preventDefault();
       addNewTask();
+      event.preventDefault();
     });
     //
 
