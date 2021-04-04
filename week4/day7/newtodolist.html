@@ -32,7 +32,7 @@
               <input type="radio" id="high" name="priority" value="high" />
               High </label
             ><br />
-            <button id="submitButton">Add to List</button>
+            <button type="submit" id="submitButton">Add to List</button>
           </fieldset>
         </form>
       </div>
@@ -49,8 +49,9 @@
     const myHeading = document.querySelector(".welcome");
     const changeUserButton = document.querySelector(".changeUser");
     const newTaskSubmitButton = document.querySelector("#submitButton");
+    const form = document.querySelector("form");
 
-    function setUserName() {
+    const setUserName = () => {
       let myName = prompt("What is your name?");
       if (!myName) {
         setUserName();
@@ -58,7 +59,7 @@
         localStorage.setItem("name", myName);
         myHeading.textContent = `Welcome to Your To Do List, ${myName}!`;
       }
-    }
+    };
 
     if (!localStorage.getItem("name")) {
       setUserName();
@@ -74,6 +75,9 @@
       taskHeaderHolder.innerHTML = "Your To Do List";
       const deleteButton = document.createElement("button");
       deleteButton.innerHTML = "Delete Selected Task(s)";
+      const lowPriorityButton = document.getElementById("low");
+      const medPriorityButton = document.getElementById("medium");
+      const highPriorityButton = document.getElementById("high");
       const lowPriorityList = document.querySelector(".low-priority-list");
       const medPriorityList = document.querySelector(".medium-priority-list");
       const highPriorityList = document.querySelector(".high-priority-list");
@@ -83,9 +87,13 @@
       const newTaskPrompt = document.querySelector("#text-box");
       newlyAddedTask.innerHTML = newTaskPrompt.value;
       newlyAddedTask.prepend(checkboxes);
-      // if lowprioritybox is checked - add to lowPriorityList
-      // else if medprioritybox is checked - add to medPriorityList
-      // else add to highPriorityList
+      if (lowPriorityButton.checked) {
+        lowPriorityList.append(newlyAddedTask);
+      } else if (medPriorityButton.checked) {
+        medPriorityList.append(newlyAddedTask);
+      } else {
+        highPriorityList.append(newlyAddedTask);
+      }
       document.getElementById("text-box").value = "";
     };
     //
@@ -96,7 +104,10 @@
     };
 
     // calls function to add task when button is clicked
-    newTaskSubmitButton.addEventListener("click", addNewTask);
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      addNewTask();
+    });
     //
 
     // calls function to change user when button is clicked
@@ -104,7 +115,7 @@
     //
 
     // calls function to delete tasks when button is clicked
-    deleteButton.addEventListener("click", deleteTask);
+    // deleteButton.addEventListener("click", deleteTask);
     //
   </script>
 </html>
