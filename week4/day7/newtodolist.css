@@ -63,3 +63,6 @@ fieldset {
   border: none;
   text-align: center;
 }
+
+/* make 3 to do lists in a flex row with headers aligned */
+/* give low med high lists underlined headers */

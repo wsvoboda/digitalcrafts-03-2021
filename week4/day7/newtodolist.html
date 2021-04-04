@@ -38,7 +38,9 @@
       </div>
       <div class="tasksDiv">
         <u><h1 class="taskList"></h1></u>
-        <ul class="main-list"></ul>
+        <ul class="low-priority-list"></ul>
+        <ul class="medium-priority-list"></ul>
+        <ul class="high-priority-list"></ul>
       </div>
     </div>
   </body>
@@ -67,27 +69,42 @@
     //
 
     // takes tasks and adds them to a list
-    function addNewTask() {
+    const addNewTask = () => {
       const taskHeaderHolder = document.querySelector(".taskList");
       taskHeaderHolder.innerHTML = "Your To Do List";
-      const listOfTasks = document.querySelector(".main-list");
+      const deleteButton = document.createElement("button");
+      deleteButton.innerHTML = "Delete Selected Task(s)";
+      const lowPriorityList = document.querySelector(".low-priority-list");
+      const medPriorityList = document.querySelector(".medium-priority-list");
+      const highPriorityList = document.querySelector(".high-priority-list");
       const newlyAddedTask = document.createElement("li");
       const checkboxes = document.createElement("input");
       checkboxes.type = "checkbox";
       const newTaskPrompt = document.querySelector("#text-box");
       newlyAddedTask.innerHTML = newTaskPrompt.value;
       newlyAddedTask.prepend(checkboxes);
-      listOfTasks.append(newlyAddedTask);
+      // if lowprioritybox is checked - add to lowPriorityList
+      // else if medprioritybox is checked - add to medPriorityList
+      // else add to highPriorityList
       document.getElementById("text-box").value = "";
-    }
+    };
     //
+
+    const deleteTask = () => {
+      // if checkbox is checked - remove list item
+      // else do nothing
+    };
 
     // calls function to add task when button is clicked
     newTaskSubmitButton.addEventListener("click", addNewTask);
     //
 
-    // calls function to  change user when button is clicked
+    // calls function to change user when button is clicked
     changeUserButton.addEventListener("click", setUserName);
+    //
+
+    // calls function to delete tasks when button is clicked
+    deleteButton.addEventListener("click", deleteTask);
     //
   </script>
 </html>
