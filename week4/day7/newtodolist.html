@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="newtodolist.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="welcomeDiv">
+        <h1 class="welcome"></h1>
+        <button class="changeUser">Change User</button>
+        <form>
+          <fieldset>
+            <h2>Enter a New Task Below:</h2>
+            <input type="text" id="text-box" />
+            <h4>Priority:</h4>
+            <label>
+              <input type="radio" id="low" name="priority" value="low" /> Low
+            </label>
+            <label>
+              <input type="radio" id="medium" name="priority" value="medium" />
+              Medium </label
+            ><label>
+              <input type="radio" id="high" name="priority" value="high" />
+              High </label
+            ><br />
+            <button id="submitButton">Add to List</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="tasksDiv">
+        <u><h1 class="taskList"></h1></u>
+        <ul class="main-list"></ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    // asks for users name,stores it, and puts it in header
+    const myHeading = document.querySelector(".welcome");
+    const changeUserButton = document.querySelector(".changeUser");
+    const newTaskSubmitButton = document.querySelector("#submitButton");
+
+    function setUserName() {
+      let myName = prompt("What is your name?");
+      if (!myName) {
+        setUserName();
+      } else {
+        localStorage.setItem("name", myName);
+        myHeading.textContent = `Welcome to Your To Do List, ${myName}!`;
+      }
+    }
+
+    if (!localStorage.getItem("name")) {
+      setUserName();
+    } else {
+      let storedName = localStorage.getItem("name");
+      myHeading.textContent = "Welcome to Your To Do List, " + storedName + "!";
+    }
+    //
+
+    // takes tasks and adds them to a list
+    function addNewTask() {
+      const taskHeaderHolder = document.querySelector(".taskList");
+      taskHeaderHolder.innerHTML = "Your To Do List";
+      const listOfTasks = document.querySelector(".main-list");
+      const newlyAddedTask = document.createElement("li");
+      const checkboxes = document.createElement("input");
+      checkboxes.type = "checkbox";
+      const newTaskPrompt = document.querySelector("#text-box");
+      newlyAddedTask.innerHTML = newTaskPrompt.value;
+      newlyAddedTask.prepend(checkboxes);
+      listOfTasks.append(newlyAddedTask);
+      document.getElementById("text-box").value = "";
+    }
+    //
+
+    // calls function to add task when button is clicked
+    newTaskSubmitButton.addEventListener("click", addNewTask);
+    //
+
+    // calls function to  change user when button is clicked
+    changeUserButton.addEventListener("click", setUserName);
+    //
+  </script>
+</html>
