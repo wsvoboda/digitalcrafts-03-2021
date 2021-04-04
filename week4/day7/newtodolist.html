@@ -79,8 +79,11 @@
       const medPriorityButton = document.getElementById("medium");
       const highPriorityButton = document.getElementById("high");
       const lowPriorityList = document.querySelector(".low-priority-list");
+      lowPriorityList.innerHTML = "Low Priority Tasks";
       const medPriorityList = document.querySelector(".medium-priority-list");
+      medPriorityList.innerHTML = "Medium Priority Tasks";
       const highPriorityList = document.querySelector(".high-priority-list");
+      highPriorityList.innerHTML = "High Priority Tasks";
       const newlyAddedTask = document.createElement("li");
       const checkboxes = document.createElement("input");
       checkboxes.type = "checkbox";
