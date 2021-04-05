@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>XML HTTP Request</h1>
+    <div class="root"></div>
+  </body>
+  <script>
+    const request = new XMLHttpRequest(); // creates an object
+    // do something when state changes
+    request.onreadystatechange = function () {
+      //   console.log("console.log this ", this);
+      const response = JSON.parse(this.responseText);
+      //   console.log(response.name);
+      const image = document.createElement("img");
+      image.src = response.sprites.front_default;
+      const div = document.querySelector(".root");
+      div.append(image);
+      //   console.log(response);
+      //   console.log(this.status);
+      //   console.log(this.response);
+      //   console.log(this.responseURL);
+    }; // status update
+    request.open("GET", "https://pokeapi.co/api/v2/pokemon/6"); // open takes 2 arguments, HTTP Method, is the URL or location of what you want to get
+    request.send();
+    // console.log(request);
+    // console.log("Grabbing user input");
+    // console.log("Grabbing user address");
+    // setTimeout(() => console.log("Writing in letter body"), 3000); // setTimeout, then an anonymous function, then your function, then amount in milliseconds
+    // console.log("Mail a letter to user");
+  </script>
+</html>
