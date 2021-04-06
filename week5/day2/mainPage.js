@@ -1,5 +1,6 @@
 const meetPeopleButton = document.querySelector(".meet");
 const discoverPlacesButton = document.querySelector(".discover");
+const bigPeopleContainer = document.querySelector(".meet-people");
 
 const peopleList = async () => {
   const allPeople = await fetch(
@@ -17,10 +18,13 @@ const peopleList = async () => {
     const country = peopleForSite.data[i].address.country;
     const email = peopleForSite.data[i].email;
     const phoneNumber = peopleForSite.data[i].phone;
-
-    console.log(
-      `${firstName} ${lastName} ${city} ${country} ${email} ${phoneNumber}`
-    );
+    const infoOnPerson = `${firstName} ${lastName} ${city} ${country} ${email} ${phoneNumber}`;
+    const peopleContainer = document.createElement("div");
+    peopleContainer.className = "new-person";
+    const containerForInfo = document.createElement("p");
+    containerForInfo.innerHTML = infoOnPerson;
+    peopleContainer.append(containerForInfo);
+    bigPeopleContainer.append(peopleContainer);
   }
 };
 
