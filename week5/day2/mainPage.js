@@ -1,8 +1,8 @@
 const meetPeopleButton = document.querySelector(".meet");
 const discoverPlacesButton = document.querySelector(".discover");
-const bigPeopleContainer = document.querySelector(".meet-people");
+const bigPeopleContainer = document.querySelector("#meet-people");
 const smallPeopleContainer = document.querySelector(".people-card-holder");
-const bigPlaceContainer = document.querySelector(".discover-places");
+const bigPlaceContainer = document.querySelector("#discover-places");
 const smallPlaceContainer = document.querySelector(".location-card-holder");
 
 const peopleList = async () => {
@@ -38,6 +38,7 @@ const peopleList = async () => {
 };
 
 meetPeopleButton.addEventListener("click", (e) => {
+  document.getElementById("meet-people").scrollIntoView();
   peopleList();
 });
 
@@ -65,5 +66,6 @@ const placesList = async () => {
 };
 
 discoverPlacesButton.addEventListener("click", (e) => {
+  document.getElementById("discover-places").scrollIntoView();
   placesList();
 });
