@@ -36,7 +36,6 @@ const getAllData = async () => {
     `https://api.openweathermap.org/data/2.5/weather?zip=${userZipToUse},us&appid=3f13f8ca2ba61051250b3c015ae9067a&units=imperial`
   );
   const formattedData = await allData.json();
-  console.log(formattedData);
   const zipCheck = formattedData.cod;
   if (zipCheck === 200) {
     const locationForPage = formattedData.name;
