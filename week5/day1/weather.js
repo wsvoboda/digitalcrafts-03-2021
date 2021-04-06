@@ -37,24 +37,29 @@ const getAllData = async () => {
   );
   const formattedData = await allData.json();
   console.log(formattedData);
-  const locationForPage = formattedData.name;
-  const locationHeader = document.querySelector(".location");
-  locationHeader.innerHTML = locationForPage;
-  const rawTemperature = formattedData.main.temp;
-  const tempForPage = rawTemperature.toFixed(0);
-  const temperatureHeader = document.querySelector(".temperature");
-  temperatureHeader.innerHTML = `${tempForPage}&deg`;
-  const lowForDay = formattedData.main.temp_min;
-  const lowForPage = lowForDay.toFixed(0);
-  const lowTemperatureHeader = document.querySelector(".low-temp");
-  lowTemperatureHeader.innerHTML = `Low: ${lowForPage}&deg`;
-  const highForDay = formattedData.main.temp_max;
-  const highForPage = highForDay.toFixed(0);
-  const highTemperatureHeader = document.querySelector(".high-temp");
-  highTemperatureHeader.innerHTML = `High: ${highForPage}&deg`;
-  const conditionsForPage = formattedData.weather[0].description;
-  const conditionsHeader = document.querySelector(".conditions");
-  conditionsHeader.innerHTML = conditionsForPage;
+  const zipCheck = formattedData.cod;
+  if (zipCheck === 200) {
+    const locationForPage = formattedData.name;
+    const locationHeader = document.querySelector(".location");
+    locationHeader.innerHTML = locationForPage;
+    const rawTemperature = formattedData.main.temp;
+    const tempForPage = rawTemperature.toFixed(0);
+    const temperatureHeader = document.querySelector(".temperature");
+    temperatureHeader.innerHTML = `${tempForPage}&deg`;
+    const lowForDay = formattedData.main.temp_min;
+    const lowForPage = lowForDay.toFixed(0);
+    const lowTemperatureHeader = document.querySelector(".low-temp");
+    lowTemperatureHeader.innerHTML = `Low: ${lowForPage}&deg`;
+    const highForDay = formattedData.main.temp_max;
+    const highForPage = highForDay.toFixed(0);
+    const highTemperatureHeader = document.querySelector(".high-temp");
+    highTemperatureHeader.innerHTML = `High: ${highForPage}&deg`;
+    const conditionsForPage = formattedData.weather[0].description;
+    const conditionsHeader = document.querySelector(".conditions");
+    conditionsHeader.innerHTML = conditionsForPage;
+  } else {
+    alert("Please enter a valid zip code");
+  }
 };
 
 searchButtonClicked.addEventListener("click", (e) => {
