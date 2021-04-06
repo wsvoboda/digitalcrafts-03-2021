@@ -1,0 +1,77 @@
+html {
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.main-container {
+  background-color: rgb(113, 161, 177);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  border-radius: 5px;
+  height: 70%;
+  min-height: 80px;
+  width: 80%;
+  min-width: 600px;
+  max-width: 1000px;
+  opacity: 92%;
+}
+
+.new-person {
+  border: 2px solid black;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.new-person h4 {
+  padding: 10px;
+}
+
+.main-pic {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.meet {
+  height: 30px;
+  width: 60px;
+  border-radius: 1px;
+}
+
+.discover {
+  height: 30px;
+  width: 80px;
+  border-radius: 1px;
+}
+
+.meet-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.people-card-holder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 10px;
+  margin: 10px;
+}
+
+img {
+  margin-top: 5px;
+  border-radius: 3px;
+}
