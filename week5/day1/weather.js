@@ -1,37 +1,63 @@
-const getWeather = async () => {
-  const weather = await fetch(
-    "https://api.openweathermap.org/data/2.5/weather?zip=76051,us&appid=3f13f8ca2ba61051250b3c015ae9067a"
-  );
-  const formattedWeather = await weather.json();
-  console.log(formattedWeather);
-};
+// const getAllData = async () => {
+//   const allData = await fetch(
+//     "https://api.openweathermap.org/data/2.5/weather?zip=76051,us&appid=3f13f8ca2ba61051250b3c015ae9067a&units=imperial"
+//   );
+//   const formattedData = await allData.json();
+//   const locationForPage = formattedData.name;
+//   const locationHeader = document.querySelector(".location");
+//   locationHeader.innerHTML = locationForPage;
+//   const rawTemperature = formattedData.main.temp;
+//   const tempForPage = rawTemperature.toFixed(0);
+//   const temperatureHeader = document.querySelector(".temperature");
+//   temperatureHeader.innerHTML = `${tempForPage}&deg`;
+//   const lowForDay = formattedData.main.temp_min;
+//   const lowForPage = lowForDay.toFixed(0);
+//   const lowTemperatureHeader = document.querySelector(".low-temp");
+//   lowTemperatureHeader.innerHTML = `Low: ${lowForPage}&deg`;
+//   const highForDay = formattedData.main.temp_max;
+//   const highForPage = highForDay.toFixed(0);
+//   const highTemperatureHeader = document.querySelector(".high-temp");
+//   highTemperatureHeader.innerHTML = `High: ${highForPage}&deg`;
+//   const conditionsForPage = formattedData.weather[0].description;
+//   const conditionsHeader = document.querySelector(".conditions");
+//   conditionsHeader.innerHTML = conditionsForPage;
+// };
 
-getWeather();
+// getAllData();
 
-const getLocation = async () => {
-  const location = await fetch(
-    "https://api.openweathermap.org/data/2.5/weather?zip=76051,us&appid=3f13f8ca2ba61051250b3c015ae9067a"
+// to take user input
+
+const searchButtonClicked = document.querySelector(".zip-search");
+const zipInputField = document.querySelector(".zip-input");
+
+const getAllData = async () => {
+  const userZipToUse = zipInputField.value;
+  const allData = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?zip=${userZipToUse},us&appid=3f13f8ca2ba61051250b3c015ae9067a&units=imperial`
   );
-  const formattedLocation = await location.json();
-  const locationForPage = formattedLocation.name;
-  console.log(locationForPage);
+  const formattedData = await allData.json();
+  console.log(formattedData);
+  const locationForPage = formattedData.name;
   const locationHeader = document.querySelector(".location");
   locationHeader.innerHTML = locationForPage;
-};
-
-getLocation();
-
-const getTemperature = async () => {
-  const temperature = await fetch(
-    "https://api.openweathermap.org/data/2.5/weather?zip=76051,us&appid=3f13f8ca2ba61051250b3c015ae9067a"
-  );
-  const pulledTemperature = await temperature.json();
-  const rawTemperature = pulledTemperature.main.temp;
-  const tempInDegreesF = (rawTemperature - 273.15) * (9 / 5) + 32;
-  const tempForPage = tempInDegreesF.toFixed(0);
-  console.log(tempForPage);
+  const rawTemperature = formattedData.main.temp;
+  const tempForPage = rawTemperature.toFixed(0);
   const temperatureHeader = document.querySelector(".temperature");
-  temperatureHeader.innerHTML = tempForPage;
+  temperatureHeader.innerHTML = `${tempForPage}&deg`;
+  const lowForDay = formattedData.main.temp_min;
+  const lowForPage = lowForDay.toFixed(0);
+  const lowTemperatureHeader = document.querySelector(".low-temp");
+  lowTemperatureHeader.innerHTML = `Low: ${lowForPage}&deg`;
+  const highForDay = formattedData.main.temp_max;
+  const highForPage = highForDay.toFixed(0);
+  const highTemperatureHeader = document.querySelector(".high-temp");
+  highTemperatureHeader.innerHTML = `High: ${highForPage}&deg`;
+  const conditionsForPage = formattedData.weather[0].description;
+  const conditionsHeader = document.querySelector(".conditions");
+  conditionsHeader.innerHTML = conditionsForPage;
 };
 
-getTemperature();
+searchButtonClicked.addEventListener("click", (e) => {
+  e.preventDefault();
+  getAllData();
+});
