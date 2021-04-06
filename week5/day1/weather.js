@@ -56,6 +56,8 @@ const getAllData = async () => {
     const conditionsForPage = formattedData.weather[0].description;
     const conditionsHeader = document.querySelector(".conditions");
     conditionsHeader.innerHTML = conditionsForPage;
+    const imageDiv = document.querySelector(".weather-type");
+    imageDiv.innerHTML = '<img src="./pngegg.png">';
   } else {
     alert("Please enter a valid zip code");
   }
