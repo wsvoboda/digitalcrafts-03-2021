@@ -5,6 +5,7 @@ html {
   -o-background-size: cover;
   background-size: cover;
   font-family: "Open Sans Condensed", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .main-container {
@@ -17,7 +18,7 @@ html {
   height: 70%;
   min-height: 80px;
   width: 80%;
-  min-width: 600px;
+  min-width: 800px;
   max-width: 1000px;
   opacity: 92%;
 }
@@ -32,10 +33,6 @@ html {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
-.new-person h4 {
-  padding: 10px;
 }
 
 .main-pic {
@@ -74,4 +71,30 @@ html {
 img {
   margin-top: 5px;
   border-radius: 3px;
+}
+
+.location-card-holder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 10px;
+  margin: 10px;
+}
+
+.new-place {
+  border: 2px solid black;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.discover-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }

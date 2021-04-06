@@ -42,6 +42,7 @@ meetPeopleButton.addEventListener("click", (e) => {
 });
 
 const placesList = async () => {
+  bigPeopleContainer.innerHTML = "";
   const allPlaces = await fetch(
     "https://fakerapi.it/api/v1/images?_quantity=30&_locale=en_US&_type=nature&_height=200&_width=200"
   );
