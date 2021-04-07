@@ -107,17 +107,6 @@ img {
   flex-direction: column;
 }
 
-#clear-button {
-  height: 30px;
-  width: 80px;
-  border-radius: 1px;
-  margin-top: 8px;
-}
-
-#meet-people {
+/* #holder-of-all-cards {
   display: none;
-}
-
-#discover-places {
-  display: none;
-}
+} */
