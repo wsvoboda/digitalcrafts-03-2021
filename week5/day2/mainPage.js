@@ -8,7 +8,6 @@ const headerWithButtons = document.querySelector(".header-with-buttons");
 const clearButton = document.createElement("button");
 clearButton.id = "clear-button";
 clearButton.innerHTML = "Clear All";
-const mainContainer = document.querySelector(".main-container");
 
 const peopleList = async () => {
   bigPeopleContainer.style.display =
@@ -71,7 +70,7 @@ const placesList = async () => {
     const containerForPlaceInfo = document.createElement("h4");
     containerForPlaceInfo.innerHTML = `${placeName}`;
     const imageOfPlace = document.createElement("img");
-    imageOfPlace.src = placeImageURL;
+    imageOfPlace.src = `https://source.unsplash.com/random/200x200?sig=${i}`;
     locationHeader.append(clearButton);
     bigPlaceContainer.prepend(locationHeader);
     placeContainer.append(imageOfPlace, containerForPlaceInfo);
