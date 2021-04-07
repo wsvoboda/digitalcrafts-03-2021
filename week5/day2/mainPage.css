@@ -99,9 +99,3 @@ img {
 .new-place:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-
-.discover-header {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
