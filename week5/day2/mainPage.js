@@ -8,6 +8,7 @@ const headerWithButtons = document.querySelector(".header-with-buttons");
 const clearButton = document.createElement("button");
 clearButton.id = "clear-button";
 clearButton.innerHTML = "Clear All";
+const mainContainer = document.querySelector(".main-container");
 
 const peopleList = async () => {
   bigPeopleContainer.style.display =
@@ -38,7 +39,7 @@ const peopleList = async () => {
     const imageOfPerson = document.createElement("img");
     imageOfPerson.height = "200";
     imageOfPerson.width = "200";
-    imageOfPerson.src = peopleForSite.data[i].image;
+    imageOfPerson.src = `https://randomuser.me/api/portraits/women/${i}.jpg`;
     bigPeopleContainer.prepend(meetHeader);
     peopleContainer.append(imageOfPerson, containerForInfo);
     smallPeopleContainer.append(peopleContainer);
