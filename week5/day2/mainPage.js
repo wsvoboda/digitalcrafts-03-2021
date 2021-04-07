@@ -1,6 +1,5 @@
 const meetButton = document.querySelector(".meet");
 const discoverPlacesButton = document.querySelector(".discover");
-const headerWithButtons = document.querySelector(".header-with-buttons");
 const holderOfAllCards = document.querySelector("#holder-of-all-cards");
 const individualCardHolder = document.querySelector(".individual-card-holder");
 
