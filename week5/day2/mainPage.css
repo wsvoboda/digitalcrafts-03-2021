@@ -9,7 +9,7 @@ html {
 }
 
 .main-container {
-  background-color: rgb(113, 161, 177);
+  background-color: rgb(113, 161, 177, 0.92);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,19 +20,22 @@ html {
   width: 80%;
   min-width: 800px;
   max-width: 1000px;
-  opacity: 92%;
 }
 
 .new-person {
   border: 2px solid black;
   border-radius: 3px;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-  box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
   align-items: center;
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: white;
+}
+
+.new-person:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .main-pic {
@@ -84,17 +87,29 @@ img {
 .new-place {
   border: 2px solid black;
   border-radius: 3px;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-  box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
   align-items: center;
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: white;
+  padding: 4px 6px 4px 6px;
+}
+
+.new-place:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .discover-header {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+#clear-button {
+  height: 30px;
+  width: 80px;
+  border-radius: 1px;
+  margin-top: 8px;
 }

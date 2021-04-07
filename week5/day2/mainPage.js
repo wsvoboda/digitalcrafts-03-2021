@@ -4,6 +4,9 @@ const bigPeopleContainer = document.querySelector("#meet-people");
 const smallPeopleContainer = document.querySelector(".people-card-holder");
 const bigPlaceContainer = document.querySelector("#discover-places");
 const smallPlaceContainer = document.querySelector(".location-card-holder");
+const clearButton = document.createElement("button");
+clearButton.id = "clear-button";
+clearButton.innerHTML = "Clear All";
 
 const peopleList = async () => {
   const allPeople = await fetch(
@@ -25,6 +28,7 @@ const peopleList = async () => {
     peopleContainer.className = "new-person";
     const meetHeader = document.querySelector(".meet-header");
     meetHeader.innerHTML = "These people are open to new friendship!";
+    meetHeader.append(clearButton);
     const containerForInfo = document.createElement("h4");
     containerForInfo.innerHTML = infoOnPerson;
     const imageOfPerson = document.createElement("img");
@@ -49,7 +53,7 @@ const placesList = async () => {
   );
   const placesForSite = await allPlaces.json();
   for (let i = 0; i < placesForSite.data.length; i++) {
-    const placeName = placesForSite.data[i].title;
+    const placeName = placesForSite.data[i].title.slice(0, -1);
     const placeImageURL = placesForSite.data[i].url;
     const placeContainer = document.createElement("div");
     placeContainer.className = "new-place";
@@ -59,6 +63,7 @@ const placesList = async () => {
     containerForPlaceInfo.innerHTML = `${placeName}`;
     const imageOfPlace = document.createElement("img");
     imageOfPlace.src = placeImageURL;
+    locationHeader.append(clearButton);
     bigPlaceContainer.prepend(locationHeader);
     placeContainer.append(imageOfPlace, containerForPlaceInfo);
     smallPlaceContainer.append(placeContainer);
