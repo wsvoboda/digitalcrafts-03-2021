@@ -1,10 +1,11 @@
-const meetPeopleButton = document.querySelector(".meet");
+const meetWomenButton = document.querySelector(".meet-women");
+const meetMenButton = document.querySelector(".meet-men");
 const discoverPlacesButton = document.querySelector(".discover");
 const headerWithButtons = document.querySelector(".header-with-buttons");
 const holderOfAllCards = document.querySelector("#holder-of-all-cards");
 const individualCardHolder = document.querySelector(".individual-card-holder");
 
-const peopleList = async () => {
+const womenList = async () => {
   if (individualCardHolder !== 0) {
     individualCardHolder.innerHTML = "";
   }
@@ -26,7 +27,7 @@ const peopleList = async () => {
     const peopleContainer = document.createElement("div");
     peopleContainer.className = "new-person";
     const meetHeader = document.querySelector(".card-header");
-    meetHeader.innerHTML = "These people are open to new friendship!";
+    meetHeader.innerHTML = "These people are open to new friendships!";
     const containerForInfo = document.createElement("h4");
     containerForInfo.innerHTML = infoOnPerson;
     const imageOfPerson = document.createElement("img");
@@ -41,8 +42,49 @@ const peopleList = async () => {
   }
 };
 
-meetPeopleButton.addEventListener("click", (e) => {
-  peopleList();
+meetWomenButton.addEventListener("click", (e) => {
+  womenList();
+});
+
+const menList = async () => {
+  if (individualCardHolder !== 0) {
+    individualCardHolder.innerHTML = "";
+  }
+  const allPeople = await fetch(
+    "https://fakerapi.it/api/v1/persons?_quantity=30&_locale=en_US&_gender=male"
+  );
+  const peopleForSite = await allPeople.json();
+  for (let i = 0; i < peopleForSite.data.length; i++) {
+    const firstName = peopleForSite.data[i].firstname;
+    const lastName = peopleForSite.data[i].lastname;
+    const city = peopleForSite.data[i].address.city;
+    const country = peopleForSite.data[i].address.country;
+    const email = peopleForSite.data[i].email;
+    const phoneNumber = peopleForSite.data[i].phone;
+    const infoOnPerson = `${firstName} ${lastName} <br>
+    ${city} | ${country} <br>
+    ${email} <br>
+    ${phoneNumber}`;
+    const peopleContainer = document.createElement("div");
+    peopleContainer.className = "new-person";
+    const meetHeader = document.querySelector(".card-header");
+    meetHeader.innerHTML = "These people are open to new friendships!";
+    const containerForInfo = document.createElement("h4");
+    containerForInfo.innerHTML = infoOnPerson;
+    const imageOfPerson = document.createElement("img");
+    imageOfPerson.height = "200";
+    imageOfPerson.width = "200";
+    randomNumber = Math.floor(Math.random() * 90) + 1;
+    imageOfPerson.src = `https://randomuser.me/api/portraits/men/${randomNumber}.jpg`;
+    holderOfAllCards.prepend(meetHeader);
+    peopleContainer.append(imageOfPerson, containerForInfo);
+    individualCardHolder.append(peopleContainer);
+    holderOfAllCards.scrollIntoView();
+  }
+};
+
+meetMenButton.addEventListener("click", (e) => {
+  menList();
 });
 
 const placesList = async () => {
