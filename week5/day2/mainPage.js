@@ -10,6 +10,8 @@ clearButton.id = "clear-button";
 clearButton.innerHTML = "Clear All";
 
 const peopleList = async () => {
+  bigPeopleContainer.style.display =
+    bigPeopleContainer.style.display === "block" ? "none" : "block";
   headerWithButtons.innerHTML = "";
   const allPeople = await fetch(
     "https://fakerapi.it/api/v1/persons?_quantity=30&_locale=en_US"
@@ -50,6 +52,8 @@ meetPeopleButton.addEventListener("click", (e) => {
 });
 
 const placesList = async () => {
+  bigPlaceContainer.style.display =
+    bigPlaceContainer.style.display === "block" ? "none" : "block";
   bigPeopleContainer.innerHTML = "";
   headerWithButtons.innerHTML = "";
   const allPlaces = await fetch(
