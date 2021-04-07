@@ -86,3 +86,23 @@ discoverPlacesButton.addEventListener("click", (e) => {
 clearButton.addEventListener("click", (e) => {
   history.go(0);
 });
+
+var listOfPics = [
+  "camping.jpg",
+  "hiking.jpg",
+  "girls.jpg",
+  "surfing.jpg",
+  "party.jpg",
+];
+
+var index = 0;
+const changeImage = () => {
+  index += 1;
+  if (index == listOfPics.length) index = 0;
+  var imageFlip = document.getElementById("main-pic");
+  imageFlip.src = listOfPics[index];
+};
+
+setInterval(function () {
+  changeImage();
+}, 4000);
