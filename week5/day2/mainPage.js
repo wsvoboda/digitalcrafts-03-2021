@@ -41,11 +41,11 @@ const peopleList = async () => {
     peopleContainer.append(imageOfPerson, containerForInfo);
     smallPeopleContainer.append(peopleContainer);
     bigPlaceContainer.innerHTML = "";
+    bigPeopleContainer.scrollIntoView();
   }
 };
 
 meetPeopleButton.addEventListener("click", (e) => {
-  document.getElementById("meet-people").scrollIntoView();
   peopleList();
 });
 
@@ -71,11 +71,11 @@ const placesList = async () => {
     bigPlaceContainer.prepend(locationHeader);
     placeContainer.append(imageOfPlace, containerForPlaceInfo);
     smallPlaceContainer.append(placeContainer);
+    bigPlaceContainer.scrollIntoView();
   }
 };
 
 discoverPlacesButton.addEventListener("click", (e) => {
-  document.getElementById("discover-places").scrollIntoView();
   placesList();
 });
 
