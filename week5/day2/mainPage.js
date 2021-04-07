@@ -4,11 +4,13 @@ const bigPeopleContainer = document.querySelector("#meet-people");
 const smallPeopleContainer = document.querySelector(".people-card-holder");
 const bigPlaceContainer = document.querySelector("#discover-places");
 const smallPlaceContainer = document.querySelector(".location-card-holder");
+const headerWithButtons = document.querySelector(".header-with-buttons");
 const clearButton = document.createElement("button");
 clearButton.id = "clear-button";
 clearButton.innerHTML = "Clear All";
 
 const peopleList = async () => {
+  headerWithButtons.innerHTML = "";
   const allPeople = await fetch(
     "https://fakerapi.it/api/v1/persons?_quantity=30&_locale=en_US"
   );
@@ -38,6 +40,7 @@ const peopleList = async () => {
     bigPeopleContainer.prepend(meetHeader);
     peopleContainer.append(imageOfPerson, containerForInfo);
     smallPeopleContainer.append(peopleContainer);
+    bigPlaceContainer.innerHTML = "";
   }
 };
 
@@ -48,6 +51,7 @@ meetPeopleButton.addEventListener("click", (e) => {
 
 const placesList = async () => {
   bigPeopleContainer.innerHTML = "";
+  headerWithButtons.innerHTML = "";
   const allPlaces = await fetch(
     "https://fakerapi.it/api/v1/images?_quantity=30&_locale=en_US&_type=nature&_height=200&_width=200"
   );
@@ -73,4 +77,8 @@ const placesList = async () => {
 discoverPlacesButton.addEventListener("click", (e) => {
   document.getElementById("discover-places").scrollIntoView();
   placesList();
+});
+
+clearButton.addEventListener("click", (e) => {
+  history.go(0);
 });
