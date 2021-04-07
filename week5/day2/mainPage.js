@@ -70,7 +70,8 @@ const placesList = async () => {
     const containerForPlaceInfo = document.createElement("h4");
     containerForPlaceInfo.innerHTML = `${placeName}`;
     const imageOfPlace = document.createElement("img");
-    imageOfPlace.src = `https://source.unsplash.com/random/200x200?sig=${i}`;
+    randomNumber = Math.floor(Math.random() * 90) + 1;
+    imageOfPlace.src = `https://source.unsplash.com/random/200x200?sig=${randomNumber}`;
     locationHeader.append(clearButton);
     bigPlaceContainer.prepend(locationHeader);
     placeContainer.append(imageOfPlace, containerForPlaceInfo);
