@@ -14,7 +14,7 @@ const peopleList = async () => {
     bigPeopleContainer.style.display === "block" ? "none" : "block";
   headerWithButtons.innerHTML = "";
   const allPeople = await fetch(
-    "https://fakerapi.it/api/v1/persons?_quantity=30&_locale=en_US"
+    "https://fakerapi.it/api/v1/persons?_quantity=30&_locale=en_US&_gender=female"
   );
   const peopleForSite = await allPeople.json();
   for (let i = 0; i < peopleForSite.data.length; i++) {
