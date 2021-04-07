@@ -45,15 +45,9 @@ html {
   box-shadow: 0 10px 6px -6px #777;
 }
 
-.meet-women {
+.meet {
   height: 30px;
-  width: 100px;
-  border-radius: 1px;
-}
-
-.meet-men {
-  height: 30px;
-  width: 80px;
+  width: 60px;
   border-radius: 1px;
 }
 .discover {
