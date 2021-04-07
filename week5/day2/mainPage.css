@@ -57,13 +57,13 @@ html {
   border-radius: 1px;
 }
 
-.meet-header {
+.card-header {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-.people-card-holder {
+.individual-card-holder {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(10, 1fr);
