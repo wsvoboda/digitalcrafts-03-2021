@@ -11,13 +11,13 @@ const peopleList = async () => {
     "https://fakerapi.it/api/v1/persons?_quantity=30&_locale=en_US"
   );
   const peopleForSite = await allPeople.json();
-  for (let i = 0; i < peopleForSite.data.length; i++) {
-    const firstName = peopleForSite.data[i].firstname;
-    const lastName = peopleForSite.data[i].lastname;
-    const city = peopleForSite.data[i].address.city;
-    const country = peopleForSite.data[i].address.country;
-    const email = peopleForSite.data[i].email;
-    const phoneNumber = peopleForSite.data[i].phone;
+  for (let person of peopleForSite.data) {
+    const firstName = person.firstname;
+    const lastName = person.lastname;
+    const city = person.address.city;
+    const country = person.address.country;
+    const email = person.email;
+    const phoneNumber = person.phone;
     const infoOnPerson = `${firstName} ${lastName} <br>
     ${city} | ${country} <br>
     ${email} <br>
@@ -32,7 +32,7 @@ const peopleList = async () => {
     imageOfPerson.height = "200";
     imageOfPerson.width = "200";
     randomNumber = Math.floor(Math.random() * 90) + 1;
-    const gender = peopleForSite.data[i].gender;
+    const gender = person.gender;
     if (gender === "female") {
       imageOfPerson.src = `https://randomuser.me/api/portraits/women/${randomNumber}.jpg`;
     } else {
@@ -57,8 +57,8 @@ const placesList = async () => {
     "https://fakerapi.it/api/v1/images?_quantity=30&_locale=en_US&_type=nature&_height=200&_width=200"
   );
   const placesForSite = await allPlaces.json();
-  for (let i = 0; i < placesForSite.data.length; i++) {
-    const placeName = placesForSite.data[i].title.slice(0, -1);
+  for (let place of placesForSite.data) {
+    const placeName = place.title.slice(0, -1);
     const placeContainer = document.createElement("div");
     placeContainer.className = "new-place";
     const locationHeader = document.querySelector(".card-header");
