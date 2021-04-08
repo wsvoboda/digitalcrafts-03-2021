@@ -33,7 +33,7 @@ const peopleList = async () => {
     imageOfPerson.width = "200";
     randomNumber = Math.floor(Math.random() * 90) + 1;
     const gender = peopleForSite.data[i].gender;
-    if (gender == "female") {
+    if (gender === "female") {
       imageOfPerson.src = `https://randomuser.me/api/portraits/women/${randomNumber}.jpg`;
     } else {
       imageOfPerson.src = `https://randomuser.me/api/portraits/men/${randomNumber}.jpg`;
@@ -59,7 +59,6 @@ const placesList = async () => {
   const placesForSite = await allPlaces.json();
   for (let i = 0; i < placesForSite.data.length; i++) {
     const placeName = placesForSite.data[i].title.slice(0, -1);
-    const placeImageURL = placesForSite.data[i].url;
     const placeContainer = document.createElement("div");
     placeContainer.className = "new-place";
     const locationHeader = document.querySelector(".card-header");
@@ -80,7 +79,7 @@ discoverPlacesButton.addEventListener("click", (e) => {
   placesList();
 });
 
-var listOfPics = [
+const listOfPics = [
   "camping.jpg",
   "hiking.jpg",
   "girls.jpg",
@@ -88,11 +87,11 @@ var listOfPics = [
   "party.jpg",
 ];
 
-var index = 0;
+let index = 0;
 const changeImage = () => {
   index += 1;
   if (index == listOfPics.length) index = 0;
-  var imageFlip = document.getElementById("main-pic");
+  const imageFlip = document.getElementById("main-pic");
   imageFlip.src = listOfPics[index];
 };
 
