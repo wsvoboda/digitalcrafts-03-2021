@@ -4,10 +4,17 @@ const isAnagram = (input, test) => {
   const inputAsArray = input.split("");
   const testAsArray = test.split("");
 
-  const sortedInputArray = inputAsArray.sort().join(",");
-  const sortedTestArray = testAsArray.sort().join(",");
+  const casedInputs = inputAsArray
+    .map((v) => v.toLowerCase())
+    .sort()
+    .join(",");
 
-  if (sortedInputArray === sortedTestArray) {
+  const casedTest = testAsArray
+    .map((v) => v.toLowerCase())
+    .sort()
+    .join(",");
+
+  if (casedInputs === casedTest) {
     console.log("true");
   } else {
     console.log("false");
@@ -15,7 +22,6 @@ const isAnagram = (input, test) => {
 };
 
 isAnagram("toast", "stoat");
-
 isAnagram("hello", "oellh"); // true
 isAnagram("listen", "lidfje"); // false
 isAnagram("Listen", "silent"); // true
