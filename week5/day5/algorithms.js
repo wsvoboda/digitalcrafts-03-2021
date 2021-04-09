@@ -32,23 +32,77 @@ isAnagram("dorMITORY", "dirty room"); // true
 isAnagram("convers a t i o n", "voices!RANT!ON  !"); // true
 isAnagram("dkj fsdjfh", "this doesn't work"); // false
 
+// answer from class
+
+const isAnagram = (str1, str2) => {
+  string1 = str1.replace(/[^\w]/g, "").toLowerCase().split("");
+  string2 = str2.replace(/[^\w]/g, "").toLowerCase().split("");
+
+  let cache1 = {};
+
+  if (string1.length !== string2.length) {
+    return false;
+  }
+
+  for (let letter of string1) {
+    if (!cache1[letter]) {
+      cache1[letter] = 1;
+    } else {
+      cache1[letter] += 1;
+    }
+  }
+
+  let cache2 = {};
+
+  for (let letter of string2) {
+    if (!cache2[letter]) {
+      cache2[letter] = 1;
+    } else {
+      cache2[letter] += 1;
+    }
+  }
+
+  for (let key in cache1) {
+    if (!(cache1[key] == cache2[key])) {
+      return false;
+    }
+  }
+  return true;
+};
+
+console.log(isAnagram("toast", "stoat")); //true
+console.log(isAnagram("hello", "oellh")); // true
+console.log(isAnagram("listen", "lidfje")); // false
+console.log(isAnagram("Listen", "silent")); // true
+console.log(isAnagram("dorMITORY", "dirty room")); // true
+console.log(isAnagram("convers a t i o n", "voices!RANT!ON  !")); // true
+console.log(isAnagram("dkj fsdjfh", "this doesn't work")); // false
+
 // want a function that takes an array and returns if there are any repeated numbers, what those numbers are, and how many times they are repeated
 
-// function hasDuplicates(array) {
-//   let numsSoFar = [];
-//   for (let i = 0; i < array.length; ++i) {
-//     let num = array[i];
-//     numsSoFar.push(num)
-//     if (num in numsSoFar) {
-//       return true;
-//     }
-//      = true;
-//   }
-//   return false;
-// }
+// answer from class
 
-// findDuplicates([1, 2, 3, 4, 5, 1]);
-// console.log(hasDuplicates([1, 2, 3, 4, 5, 1]));
-// console.log(hasDuplicates([1, 2, 3, 4, 5, 1])); // returns 2. '1' occurs twice
-// console.log(hasDuplicates([1, 2, 2, 2, 2, 3, 2, 3, 2])); // returns 6
-// console.log(hasDuplicates([12, 12, 1, 2, 12, 22, 11])); // returns 3
+function findDuplicates(array) {
+  let cache = {};
+  for (number of array) {
+    if (!cache[number]) {
+      cache[number] = 1;
+    } else {
+      cache[number] += 1;
+    }
+  }
+  let highest = 0;
+
+  for (key in cache) {
+    if (cache[key] !== 1) {
+      if (cache[key] > highest) {
+        highest = cache[key];
+      }
+      return highest;
+    }
+  }
+}
+
+console.log(findDuplicates([1, 2, 3, 4, 5, 1])); // returns 2. '1' occurs twice
+console.log(findDuplicates([1, 2, 2, 2, 2, 3, 2, 3, 2])); // returns 6
+console.log(findDuplicates([12, 12, 1, 2, 12, 22, 11])); // returns 3
