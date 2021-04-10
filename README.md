@@ -6,4 +6,4 @@ Start Date: March 8, 2021
 
 End Date: June 28, 2021
 
-This is a repository to hold all classwork and exercises.
+This is a repository to hold all classwork and at-home exercises.
