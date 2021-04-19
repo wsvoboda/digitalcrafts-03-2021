@@ -29,8 +29,14 @@ app.get("/home", (req, res) => {
   });
 });
 
+app.get("*", (req, res) => {
+  readFile("error.html", "utf8", (err, html) => {
+    res.send(html);
+  });
+});
+
 // app.get("/another-place", (req, res) => {
-//   //   res.end("Hello another-place");
+//   //   res.send("Hello another-place");
 // });
 
 app.listen(PORT, () => {
