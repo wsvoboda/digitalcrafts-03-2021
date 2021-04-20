@@ -25,6 +25,6 @@ app.get("/faq", (req, res) => {
 
 app.post("/faq", (req, res) => {
   const { name, location, subject } = req.body;
-  const message = `${name} from ${location}, your question is about ${subject}.`;
+  const message = `Hi, ${name} from ${location}, your question is about ${subject}.`;
   res.send(message);
 });
