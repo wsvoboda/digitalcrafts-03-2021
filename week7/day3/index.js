@@ -12,8 +12,11 @@ app.get("/", (req, res) => {
 });
 
 // Routes we need to define for our node server
+
 // CRUD - create read update delete
+
 // create todo
+
 app.post("/todo", async (req, res) => {
   try {
     const { description } = req.body;
@@ -22,15 +25,38 @@ app.post("/todo", async (req, res) => {
       "INSERT INTO todo (description) VALUES ($1)",
       [description]
     ); // adds data to database called todo under column called description
-    console.log(req.body);
     res.json(newTodoInDB);
-    res.status(200);
   } catch (err) {
     console.log(err.message);
   }
 });
 
-// read todo
+// read all tasks in todo
+
+app.get("/read_todo", async (req, res) => {
+  try {
+    const readTodosFromDB = await pool.query("SELECT * FROM todo"); // pulls all tasks
+    res.json(readTodosFromDB);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+// read just one task
+
+app.get("/read_todo/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const readSingleTodoFromDB = await pool.query(
+      "SELECT * FROM todo WHERE todo_id = ($1)",
+      [id]
+    ); // pulls the task with the id number
+    res.json(readSingleTodoFromDB);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
 // update todo
 // delete todo
 
