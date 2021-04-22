@@ -13,11 +13,11 @@ app.get("/", (req, res) => {
 
 app.post("/vacation", async (req, res) => {
   try {
-    const { location } = req.body;
+    const { location, country, month, cost } = req.body;
 
     const newLocation = await pool.query(
-      "INSERT INTO locations (location) VALUES ($1)",
-      [location]
+      "INSERT INTO locations (location, country, month, cost) VALUES ($1, $2, $3, $4)",
+      [location, country, month, cost]
     );
     res.json(newLocation);
   } catch (err) {
@@ -41,7 +41,7 @@ app.get("/read_vacations/:id", async (req, res) => {
       "SELECT * FROM locations WHERE location_id = ($1)",
       [id]
     );
-    res.json(readSingleVacationFromDB);
+    res.json(readSingleVacationFromDB.rows);
   } catch (err) {
     console.log(err.message);
   }
@@ -50,10 +50,10 @@ app.get("/read_vacations/:id", async (req, res) => {
 app.put("/update_vacation/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { location } = req.body;
+    const { location, country, month, cost } = req.body;
     const updateVacationInDB = await pool.query(
-      "UPDATE locations SET location = $1 WHERE location_id = $2",
-      [location, id]
+      "UPDATE locations SET location = $1, country = $2, month = $3, cost = $4 WHERE location_id = $5",
+      [location, country, month, cost, id]
     );
     res.json(updateVacationInDB);
   } catch (err) {
