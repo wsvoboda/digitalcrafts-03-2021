@@ -3,7 +3,7 @@ const password = require("./config.js");
 
 const pool = new Pool({
   user: "postgres",
-  password: `${password}`,
+  password: `Americ@`,
   host: "localhost",
   port: 5432,
   database: "todolist",

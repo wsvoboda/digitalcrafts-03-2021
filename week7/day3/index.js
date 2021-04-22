@@ -36,7 +36,7 @@ app.post("/todo", async (req, res) => {
 app.get("/read_todo", async (req, res) => {
   try {
     const readTodosFromDB = await pool.query("SELECT * FROM todo"); // pulls all tasks
-    res.json(readTodosFromDB);
+    res.json(readTodosFromDB.rows);
   } catch (err) {
     console.log(err.message);
   }
@@ -58,7 +58,35 @@ app.get("/read_todo/:id", async (req, res) => {
 });
 
 // update todo
+
+app.put("/update_todo/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { description } = req.body;
+    const updateTodoInDB = await pool.query(
+      "UPDATE todo SET description = $1 WHERE todo_id = $2",
+      [description, id]
+    ); // pulls the task with the id number and replaces it with new description
+    res.json(updateTodoInDB);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
 // delete todo
+
+app.delete("/delete_todo/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleteTodoInDB = await pool.query(
+      "DELETE FROM todo WHERE todo_id = $1",
+      [id]
+    );
+    res.json("Todo was successfully deleted");
+  } catch (err) {
+    console.log(err.message);
+  }
+});
 
 app.listen(port, () => {
   console.log(`listening on port ${port}.`);
