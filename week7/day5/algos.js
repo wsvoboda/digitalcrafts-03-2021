@@ -2,7 +2,8 @@ const array1 = [33, 4, 88, 1, 25];
 
 console.log(array1.map((i) => i + 5).filter((i) => i % 2).length);
 
-// filter first removes the even values then the map adds 5 to the remaining values
+// map function adds 5 to every number. filter then removes the even values (because their modulus results is 0) which leaves only the odd numbers
+
 // result is 2
 
 // // Substrings
