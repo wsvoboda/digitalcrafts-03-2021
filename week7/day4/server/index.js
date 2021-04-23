@@ -68,7 +68,7 @@ app.delete("/delete_vacation/:id", async (req, res) => {
       "DELETE FROM locations WHERE location_id = $1",
       [id]
     );
-    res.json("Vacation location was successfully deleted");
+    res.json("Vacation details were successfully deleted");
   } catch (err) {
     console.log(err.message);
   }
