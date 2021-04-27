@@ -38,7 +38,7 @@ app.get("/task/:id", async (req, res) => {
       [id]
     );
     const task = showTasks.rows[0].description;
-    res.render("task", { locals: { task: task } });
+    res.render("task", { locals: { task: task, id: id } });
   } catch (err) {
     res.send("No task exists with that ID");
   }
@@ -47,12 +47,14 @@ app.get("/task/:id", async (req, res) => {
 app.get("/alltasks", async (req, res) => {
   try {
     const showAllTasks = await pool.query("SELECT description FROM todo");
-    const rowCount = showAllTasks.rowCount;
-    let tasks = [];
-    for (i = 0; i < rowCount; i++) {
-      tasks.push(showAllTasks.rows[i].description);
-    }
-    res.render("alltasks", { locals: { tasks: tasks } });
+    const alltasks = showAllTasks.rows;
+    // console.log(alltasks);
+    // const rowCount = showAllTasks.rowCount;
+    // let tasks = [];
+    // for (i = 0; i < rowCount; i++) {
+    //   tasks.push(showAllTasks.rows[i].description);
+    // }
+    res.render("alltasks", { locals: { tasks: alltasks } });
   } catch (err) {
     console.log(err.message);
   }

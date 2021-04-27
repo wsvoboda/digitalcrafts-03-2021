@@ -8,6 +8,12 @@
   </head>
   <body>
     <h1>Your Todo List</h1>
-    <h2>${tasks}</h2>
+    <h2>
+      <dl>
+        ${tasks.map(alltasks => `
+        <dt>${alltasks.description}</dt>
+        `).join('')}
+      </dl>
+    </h2>
   </body>
 </html>
