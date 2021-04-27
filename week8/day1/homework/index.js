@@ -31,29 +31,31 @@ app.post("/add", (req, res) => {
 });
 
 app.get("/task/:id", async (req, res) => {
-  const { id } = req.params;
-  const showTasks = await pool.query(
-    "SELECT description FROM todo where todo_id = $1",
-    [id]
-  );
-  const task = showTasks.rows[0].description;
-  if (task) {
+  try {
+    const { id } = req.params;
+    const showTasks = await pool.query(
+      "SELECT description FROM todo where todo_id = $1",
+      [id]
+    );
+    const task = showTasks.rows[0].description;
     res.render("task", { locals: { task: task } });
-  } else {
-    res
-      .status(404)
-      .send(`That task does not exist, there are no tasks with an id of ${id}`);
+  } catch (err) {
+    res.send("No task exists with that ID");
   }
 });
 
 app.get("/alltasks", async (req, res) => {
-  const showAllTasks = await pool.query("SELECT description FROM todo");
-  const rowCount = showAllTasks.rowCount;
-  let tasks = [];
-  for (i = 0; i < rowCount; i++) {
-    tasks.push(showAllTasks.rows[i].description);
+  try {
+    const showAllTasks = await pool.query("SELECT description FROM todo");
+    const rowCount = showAllTasks.rowCount;
+    let tasks = [];
+    for (i = 0; i < rowCount; i++) {
+      tasks.push(showAllTasks.rows[i].description);
+    }
+    res.render("alltasks", { locals: { tasks: tasks } });
+  } catch (err) {
+    console.log(err.message);
   }
-  res.render("alltasks", { locals: { tasks: tasks } });
 });
 
 app.listen(PORT, () => {
