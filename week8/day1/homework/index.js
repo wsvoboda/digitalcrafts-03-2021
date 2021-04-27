@@ -37,7 +37,7 @@ app.get("/task/:id", async (req, res) => {
     [id]
   );
   const task = showTasks.rows[0].description;
-  if (showTasks) {
+  if (task) {
     res.render("task", { locals: { task: task } });
   } else {
     res
