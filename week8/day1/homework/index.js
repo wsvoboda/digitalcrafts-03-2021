@@ -48,12 +48,6 @@ app.get("/alltasks", async (req, res) => {
   try {
     const showAllTasks = await pool.query("SELECT description FROM todo");
     const alltasks = showAllTasks.rows;
-    // console.log(alltasks);
-    // const rowCount = showAllTasks.rowCount;
-    // let tasks = [];
-    // for (i = 0; i < rowCount; i++) {
-    //   tasks.push(showAllTasks.rows[i].description);
-    // }
     res.render("alltasks", { locals: { tasks: alltasks } });
   } catch (err) {
     console.log(err.message);
