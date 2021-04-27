@@ -20,11 +20,11 @@ app.get("/", (req, res) => {
 app.post("/add", (req, res) => {
   try {
     const todo = req.body.todo;
-
     const newItem = pool.query("INSERT INTO todo (description) VALUES ($1)", [
       todo,
     ]);
-    res.render("newtask");
+    console.log(todo);
+    res.render("newtask", { locals: { todo: todo } });
   } catch (err) {
     console.log(err.message);
   }
