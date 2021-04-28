@@ -1,6 +1,14 @@
 .task-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.ind-task-container {
+  border: 1px solid rgb(153, 141, 141);
+  margin: 2px;
+  width: 30vh;
+  text-align: center;
 }
 
 .button-container {
