@@ -15,13 +15,14 @@
         ${tasks.map(alltasks => `
         <div class="ind-task-container">
           <h3>${alltasks.description}</h3>
+          <div class="big-button-container">
           <div class="button-container">
             <a href="/update-task/${alltasks.todo_id}"
               ><button type="submit">Update</button></a
             >
             <form action="/delete-task" method="POST">
               <input type="hidden" name="todo_id" value="${alltasks.todo_id}" />
-              <button type="submit">Delete</button>
+              <button type="submit">Delete</button></div>
             </form>
           </div>
         </div>

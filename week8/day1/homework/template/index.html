@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Add a Task</title>
   </head>
   <body>
-    <h2>Add a new task</h2>
-    <form action="/add" method="post">
-      <label for="todo">Task:</label>
-      <input type="text" id="todo" name="todo" /><br /><br />
-      <input type="submit" value="Submit" class="submitbtn" />
-    </form>
-    <br />
-    <a href="/">See Complete List</a>
+    <div class="main-container">
+      <div class="add-new">
+        <h2>Add a new task</h2>
+        <form action="/add" method="post">
+          <label for="todo">Task:</label>
+          <input type="text" id="todo" name="todo" /><br /><br />
+          <div class="button">
+            <input type="submit" value="Submit" class="submitbtn" />
+          </div>
+        </form>
+        <br />
+        <a href="/">See Complete List</a>
+      </div>
+    </div>
   </body>
 </html>

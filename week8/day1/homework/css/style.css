@@ -8,13 +8,34 @@
   border: 1px solid rgb(153, 141, 141);
   margin: 2px;
   width: 30vh;
+  min-width: 300px;
   text-align: center;
+}
+.big-button-container {
+  margin: 0 auto;
+  display: inline;
 }
 
 .button-container {
   display: flex;
 }
 
+.button {
+  text-align: center;
+}
+
 button {
   margin: 2px;
+}
+
+.add-new {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.change-task {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
