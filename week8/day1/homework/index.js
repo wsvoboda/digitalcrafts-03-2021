@@ -14,8 +14,16 @@ app.use(
 );
 app.use("/css", express.static("css"));
 
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/", async (req, res) => {
+  try {
+    const showAllTasks = await pool.query(
+      "SELECT * FROM todo ORDER BY todo_id"
+    );
+    const alltasks = showAllTasks.rows;
+    res.render("alltasks", { locals: { tasks: alltasks } });
+  } catch (err) {
+    console.log(err.message);
+  }
 });
 
 app.post("/delete-task", async (req, res) => {
@@ -24,7 +32,7 @@ app.post("/delete-task", async (req, res) => {
     const deleteTask = await pool.query("DELETE FROM todo WHERE todo_id = $1", [
       todoToDelete,
     ]);
-    res.redirect("/alltasks");
+    res.redirect("/");
   } catch (err) {
     console.log(err.message);
   }
@@ -44,6 +52,10 @@ app.get("/update-task/:id", async (req, res) => {
   }
 });
 
+app.get("/add", (req, res) => {
+  res.render("index");
+});
+
 app.post("/add", async (req, res) => {
   try {
     const todo = req.body.todo;
@@ -54,20 +66,6 @@ app.post("/add", async (req, res) => {
     res.render("newtask", { locals: { todo: todo } });
   } catch (err) {
     console.log(err.message);
-  }
-});
-
-app.get("/task/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const showTasks = await pool.query(
-      "SELECT description FROM todo where todo_id = $1",
-      [id]
-    );
-    const task = showTasks.rows[0].description;
-    res.render("task", { locals: { task: task, id: id } });
-  } catch (err) {
-    res.send("No task exists with that ID");
   }
 });
 
@@ -82,18 +80,6 @@ app.post("/update-task", async (req, res) => {
     res.render("task", { locals: { task: newDescription, id: todoId } });
   } catch (err) {
     res.send(err.message);
-  }
-});
-
-app.get("/alltasks", async (req, res) => {
-  try {
-    const showAllTasks = await pool.query(
-      "SELECT * FROM todo ORDER BY todo_id"
-    );
-    const alltasks = showAllTasks.rows;
-    res.render("alltasks", { locals: { tasks: alltasks } });
-  } catch (err) {
-    console.log(err.message);
   }
 });
 
