@@ -1,0 +1,12 @@
+.task-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+}
+
+button {
+  margin: 2px;
+}

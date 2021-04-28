@@ -12,18 +12,19 @@ app.use(
     extended: true,
   })
 );
+app.use("/css", express.static("css"));
 
 app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.post("/add", (req, res) => {
+app.post("/add", async (req, res) => {
   try {
     const todo = req.body.todo;
-    const newItem = pool.query("INSERT INTO todo (description) VALUES ($1)", [
-      todo,
-    ]);
-    console.log(todo);
+    const newItem = await pool.query(
+      "INSERT INTO todo (description) VALUES ($1)",
+      [todo]
+    );
     res.render("newtask", { locals: { todo: todo } });
   } catch (err) {
     console.log(err.message);
