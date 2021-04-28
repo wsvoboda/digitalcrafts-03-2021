@@ -16,7 +16,10 @@
         <h3>${alltasks.description}</h3>
         <div class="button-container">
           <a href="/update-task"><button type="submit">Update</button></a>
-          <a href="/delete-task"><button type="submit">Delete</button></a>
+          <form action="/delete-task" method="POST">
+            <input type="hidden" name="todo_id" value="${alltasks.todo_id}" />
+            <button type="submit">Delete</button>
+          </form>
         </div>
         `).join('')}
       </div>

@@ -18,6 +18,18 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.post("/delete-task", async (req, res) => {
+  try {
+    const todoToDelete = req.body.todo_id;
+    const deleteTask = await pool.query("DELETE FROM todo WHERE todo_id = $1", [
+      todoToDelete,
+    ]);
+    res.redirect("/alltasks");
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
 app.post("/add", async (req, res) => {
   try {
     const todo = req.body.todo;
@@ -47,7 +59,7 @@ app.get("/task/:id", async (req, res) => {
 
 app.get("/alltasks", async (req, res) => {
   try {
-    const showAllTasks = await pool.query("SELECT description FROM todo");
+    const showAllTasks = await pool.query("SELECT * FROM todo");
     const alltasks = showAllTasks.rows;
     res.render("alltasks", { locals: { tasks: alltasks } });
   } catch (err) {
