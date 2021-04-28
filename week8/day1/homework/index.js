@@ -30,6 +30,20 @@ app.post("/delete-task", async (req, res) => {
   }
 });
 
+app.get("/update-task/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const showTask = await pool.query(
+      "SELECT description FROM todo where todo_id = $1",
+      [id]
+    );
+    const task = showTask.rows[0].description;
+    res.render("update", { locals: { task: task, id: id } });
+  } catch (err) {
+    res.send("No task exists with that ID");
+  }
+});
+
 app.post("/add", async (req, res) => {
   try {
     const todo = req.body.todo;
@@ -57,9 +71,25 @@ app.get("/task/:id", async (req, res) => {
   }
 });
 
+app.post("/update-task", async (req, res) => {
+  try {
+    const newDescription = req.body.task;
+    const todoId = req.body.todo_id;
+    const newTask = await pool.query(
+      "UPDATE todo SET description = $1 WHERE todo_id = $2",
+      [newDescription, todoId]
+    );
+    res.render("task", { locals: { task: newDescription, id: todoId } });
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
 app.get("/alltasks", async (req, res) => {
   try {
-    const showAllTasks = await pool.query("SELECT * FROM todo");
+    const showAllTasks = await pool.query(
+      "SELECT * FROM todo ORDER BY todo_id"
+    );
     const alltasks = showAllTasks.rows;
     res.render("alltasks", { locals: { tasks: alltasks } });
   } catch (err) {
