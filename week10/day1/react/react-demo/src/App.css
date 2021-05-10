@@ -1,0 +1,26 @@
+.App {
+  height: 80vh;
+  width: 50vh;
+  background-color: pink;
+}
+
+.Sidebar,
+.AboutMe,
+.AboutContainer,
+.Nav {
+  height: 100px;
+  width: 100px;
+}
+
+.Sidebar {
+  background-color: rgb(226, 158, 150);
+}
+.AboutMe {
+  background-color: rgb(222, 242, 248);
+}
+.AboutContainer {
+  background-color: rgb(236, 183, 236);
+}
+.Nav {
+  background-color: rgb(236, 207, 131);
+}

@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import "./App.css";
+import Nav from "./compenents/Nav";
+import Sidebar from "./compenents/Sidebar";
+import AboutContainer from "./compenents/AboutContainer";
+import AboutMe from "./compenents/AboutMe";
 
 // function App() {
 //   const [count, setCount] = useState(0);
@@ -13,19 +18,31 @@ import React, { useState } from "react";
 //   );
 // }
 
-function App() {
-  const [name, setName] = useState("Whitney");
-  const [secondName, setSecondName] = useState("Svoboda");
+// function App() {
+//   const [name, setName] = useState("Whitney");
+//   const [secondName, setSecondName] = useState("Svoboda");
 
+//   return (
+//     <div className="App">
+//       <h1>Your name is {name}</h1>
+//       <h1>Your last name is {secondName}</h1>
+
+//       <button onClick={() => setName("John")}>Change The Name</button>
+//       <button onClick={() => setSecondName("Smith")}>
+//         Change The Last Name
+//       </button>
+//     </div>
+//   );
+// }
+
+function App() {
   return (
     <div className="App">
-      <h1>Your name is {name}</h1>
-      <h1>Your last name is {secondName}</h1>
-
-      <button onClick={() => setName("John")}>Change The Name</button>
-      <button onClick={() => setSecondName("Smith")}>
-        Change The Last Name
-      </button>
+      <h1>App.js</h1>
+      <AboutMe />
+      <Nav />
+      <AboutContainer />
+      <Sidebar />
     </div>
   );
 }
