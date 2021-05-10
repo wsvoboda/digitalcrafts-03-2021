@@ -26,10 +26,12 @@ export default class Sidebar extends Component {
         <h3>
           <u>Socials</u>
         </h3>
-        <a href="github.com/wsvoboda">GitHub</a>
+        <a href="https://github.com/wsvoboda">GitHub</a>
         <br></br>
         <br></br>
-        <a href="linkedin.com">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/whitney-svoboda-03570896/">
+          LinkedIn
+        </a>
       </div>
     );
   }
