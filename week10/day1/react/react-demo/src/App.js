@@ -3,7 +3,6 @@ import "./App.css";
 import Nav from "./compenents/Nav";
 import Sidebar from "./compenents/Sidebar";
 import AboutContainer from "./compenents/AboutContainer";
-import AboutMe from "./compenents/AboutMe";
 
 // function App() {
 //   const [count, setCount] = useState(0);
@@ -38,11 +37,11 @@ import AboutMe from "./compenents/AboutMe";
 function App() {
   return (
     <div className="App">
-      <h1>App.js</h1>
-      <AboutMe />
       <Nav />
-      <AboutContainer />
-      <Sidebar />
+      <div className="body">
+        <Sidebar />
+        <AboutContainer />
+      </div>
     </div>
   );
 }

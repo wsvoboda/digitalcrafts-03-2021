@@ -1,26 +1,44 @@
 .App {
-  height: 80vh;
-  width: 50vh;
+  height: 100vh;
+  width: 100vh;
   background-color: pink;
+  display: flex;
+  flex-direction: column;
 }
 
-.Sidebar,
-.AboutMe,
-.AboutContainer,
-.Nav {
-  height: 100px;
-  width: 100px;
+.body {
+  display: flex;
+  align-items: row;
+  height: 100%;
+  width: 100%;
 }
 
 .Sidebar {
   background-color: rgb(226, 158, 150);
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 10%;
 }
 .AboutMe {
   background-color: rgb(222, 242, 248);
 }
 .AboutContainer {
   background-color: rgb(236, 183, 236);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
+
 .Nav {
   background-color: rgb(236, 207, 131);
+  width: 100%;
+  height: 10%;
+  text-align: right;
+  align-items: center;
+}
+
+.Nav h1 {
+  color: white;
 }

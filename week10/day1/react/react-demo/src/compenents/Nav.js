@@ -5,7 +5,7 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-        <p>Nav</p>
+        <h1>Whitney Svoboda</h1>
       </div>
     );
   }
