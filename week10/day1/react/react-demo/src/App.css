@@ -1,9 +1,16 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: local("Playfair Display"),
+    url(./fonts/PlayfairDisplay-Medium.ttf) format("truetype");
+}
+
 .App {
   height: 100vh;
   width: 100vh;
   background-color: pink;
   display: flex;
   flex-direction: column;
+  font-family: "Playfair Display", serif;
 }
 
 .body {
@@ -18,10 +25,11 @@
   align-items: center;
   text-align: center;
   height: 100%;
-  width: 10%;
+  width: 20%;
 }
 .AboutMe {
   background-color: rgb(222, 242, 248);
+  padding: 3%;
 }
 .AboutContainer {
   background-color: rgb(236, 183, 236);
@@ -40,5 +48,16 @@
 }
 
 .Nav h1 {
-  color: white;
+  margin-right: 2%;
+}
+
+.AboutMe img {
+  height: 500px;
+  width: 300px;
+  border-radius: 3px;
+  margin: 0.5%;
+}
+
+.AboutMe p {
+  margin: 2%;
 }
