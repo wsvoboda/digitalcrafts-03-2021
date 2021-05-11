@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import ExoticCarSection from "./ExoticCarSection";
 // import MuscleCarSection from "./MuscleCarSection";
-// import ExoticCarSection from "./ExoticCarSection";
 import MotorcycleSection from "./MotorcycleSection";
 
 export default class Garage extends Component {
@@ -54,6 +54,7 @@ export default class Garage extends Component {
           })}
         </p>
         <MotorcycleSection motorcycles={vehicles[0]} />
+        <ExoticCarSection exoticcars={vehicles[1]} />
       </div>
     );
   }
