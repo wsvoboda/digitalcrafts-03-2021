@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
+import Weather from "./Weather";
 
 export default class App extends Component {
   // create constructor (props)
@@ -23,6 +24,7 @@ export default class App extends Component {
       <div>
         <h1>State Management</h1>
         <p>{title}</p>
+        <Weather itIsRainingInHouston={itIsRainingInHouston} />
         <p>
           Is it raining in Houston?{" "}
           {itIsRainingInHouston ? (
@@ -35,7 +37,23 @@ export default class App extends Component {
             </div>
           )}
         </p>
+        <button
+          onClick={() =>
+            this.setState({ itIsRainingInHouston: !itIsRainingInHouston })
+          }
+        >
+          {itIsRainingInHouston ? "Sunny Day" : "It's Raining"}
+        </button>
+        <br></br>
+        <input type="text" onChange={(e) => console.log(e.target.value)} />
         <p>Counter {counter}</p>
+
+        <button onClick={() => this.setState({ counter: counter + 1 })}>
+          Add
+        </button>
+        <button onClick={() => this.setState({ counter: counter - 1 })}>
+          Subtract
+        </button>
       </div>
       // <div>
       //   <h1>State Management</h1>
