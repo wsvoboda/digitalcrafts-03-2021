@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ExoticCarSection from "./ExoticCarSection";
-// import MuscleCarSection from "./MuscleCarSection";
+import MuscleCarSection from "./MuscleCarSection";
 import MotorcycleSection from "./MotorcycleSection";
 
 export default class Garage extends Component {
@@ -31,10 +31,7 @@ export default class Garage extends Component {
         {
           muscle: [
             {
-              american: [{ name: "Black" }],
-            },
-            {
-              foreign: [{ name: "Noir" }],
+              american: [{ name: "Camaro" }],
             },
           ],
         },
@@ -44,7 +41,7 @@ export default class Garage extends Component {
   render() {
     const { vehicles } = this.state;
     return (
-      <div>
+      <div className="garage">
         <h1>This is the Garage</h1>
         <p>The garage has {vehicles.length} sections:</p>
 
@@ -55,6 +52,7 @@ export default class Garage extends Component {
         </p>
         <MotorcycleSection motorcycles={vehicles[0]} />
         <ExoticCarSection exoticcars={vehicles[1]} />
+        <MuscleCarSection musclecars={vehicles[2]} />
       </div>
     );
   }
