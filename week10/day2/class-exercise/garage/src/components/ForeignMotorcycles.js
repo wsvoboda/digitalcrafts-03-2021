@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class ForeignMotorcycles extends Component {
   render() {
     return (
-      <div>
+      <div className="foreignmotos">
         <h1>This is the Foreign Motorcycle Section</h1>
         <p>
           There is {this.props.foreignmotos.foreign.length} motorcyle in this

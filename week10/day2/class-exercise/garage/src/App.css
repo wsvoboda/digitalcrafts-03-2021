@@ -4,4 +4,45 @@
 
 .garage {
   background-color: #c6d8d5;
+  width: 95%;
+}
+
+.motorcycles {
+  background-color: #f7e3d9;
+  width: 95%;
+}
+
+.americanmotos {
+  background-color: #f9c7e4;
+  width: 95%;
+}
+
+.foreignmotos {
+  background-color: #b4f8c8;
+  width: 95%;
+}
+
+.exotic {
+  background-color: #f7e3d9;
+  width: 95%;
+}
+
+.americanexotic {
+  background-color: #f9c7e4;
+  width: 95%;
+}
+
+.foreignexotic {
+  background-color: #b4f8c8;
+  width: 95%;
+}
+
+.muscle {
+  background-color: #f7e3d9;
+  width: 95%;
+}
+
+.americanmuscle {
+  background-color: #f9c7e4;
+  width: 95%;
 }

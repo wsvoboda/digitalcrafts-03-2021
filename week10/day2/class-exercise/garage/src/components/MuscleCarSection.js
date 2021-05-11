@@ -4,7 +4,7 @@ import AmericanCars from "./AmericanCars";
 export default class MuscleCarSection extends Component {
   render() {
     return (
-      <div>
+      <div className="muscle">
         <h1>This is the Muscle Car Section</h1>
         <p>
           There are {this.props.musclecars.muscle.length} types of cars in this

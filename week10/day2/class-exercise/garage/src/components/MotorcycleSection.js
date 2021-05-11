@@ -5,7 +5,7 @@ import ForeignMotorcycles from "./ForeignMotorcycles";
 export default class MotorcycleSection extends Component {
   render() {
     return (
-      <div>
+      <div className="motorcycles">
         <h1>This is the Motorcycle Section</h1>
         <p>
           There are {this.props.motorcycles.motorcycles.length} types of

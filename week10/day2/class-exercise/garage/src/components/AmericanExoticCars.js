@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class AmericanExoticCars extends Component {
   render() {
     return (
-      <div>
+      <div className="americanexotic">
         <h1>This is the American Exotic Section</h1>
         <p>
           There is {this.props.americanexotic.american.length} car in this

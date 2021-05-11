@@ -5,7 +5,7 @@ import ForeignExoticCars from "./ForeignExoticCars";
 export default class ExoticCarSection extends Component {
   render() {
     return (
-      <div>
+      <div className="exotic">
         <h1>This is the Exotic Car Section</h1>
         <p>
           There are {this.props.exoticcars.exotic.length} types of cars in this
