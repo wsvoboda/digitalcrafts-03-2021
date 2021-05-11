@@ -14,17 +14,32 @@ export default class App extends Component {
       counter: 0,
       title: "State Management",
       itIsRainingInHouston: false,
+      bunny: "bun",
+      restaurants: [{ name: "uchi" }, { name: "Taste of Texas" }],
+      monitors: 1,
     };
     // set state using this.setState. This is the built in function to manipulate any state variable
   }
 
   render() {
-    const { counter, title, itIsRainingInHouston } = this.state;
+    const {
+      counter,
+      title,
+      itIsRainingInHouston,
+      bunny,
+      restaurants,
+      monitors,
+    } = this.state;
     return (
       <div>
         <h1>State Management</h1>
         <p>{title}</p>
-        <Weather itIsRainingInHouston={itIsRainingInHouston} />
+        <Weather
+          itIsRainingInHouston={itIsRainingInHouston}
+          bunny={bunny}
+          restaurants={restaurants}
+          monitors={monitors}
+        />
         <p>
           Is it raining in Houston?{" "}
           {itIsRainingInHouston ? (
