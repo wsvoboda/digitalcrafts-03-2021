@@ -5,7 +5,7 @@ import "../App.css";
 export default class Footer extends Component {
   render() {
     return (
-      <div>
+      <div className="footerdiv">
         <div className="leftfooter">
           <a
             href={`https://ads.google.com/intl/en_us/home/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1#!/`}

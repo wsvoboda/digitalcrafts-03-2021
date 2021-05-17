@@ -6,6 +6,9 @@
 .App {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+  height: 97vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -62,10 +65,63 @@
   padding-top: 2%;
 }
 
+.input-bar {
+  width: 40%;
+  height: 36px;
+  border: solid 1px rgb(218, 211, 211);
+  border-radius: 22px;
+}
+
+.buttons button {
+  font-family: "Roboto", sans-serif;
+  border: none;
+  margin: 1%;
+  border-radius: 4px;
+  height: 36px;
+  width: 142px;
+  background-color: rgb(250, 242, 242);
+  color: rgb(53, 52, 52);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5%;
+}
+
+.footerdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-top: auto;
+}
+
+.leftfooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 25%;
+}
+
 .leftfooter a {
   color: rgb(145, 142, 142);
   text-decoration: none;
   margin: 2%;
+}
+
+.centerfooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 20%;
+  padding-right: 10%;
 }
 
 .centerfooter a {
@@ -80,26 +136,18 @@
   margin-right: 5px;
 }
 
+.rightfooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding-right: 5%;
+}
+
 .rightfooter a {
   color: rgb(145, 142, 142);
   text-decoration: none;
   margin: 2%;
-}
-
-.buttons button {
-  font-family: "Roboto", sans-serif;
-  border: none;
-  margin: 1%;
-  border-radius: 4px;
-  height: 36px;
-  width: 142px;
-  background-color: rgb(250, 242, 242);
-  color: rgb(53, 52, 52);
-}
-
-.input-bar {
-  width: 40%;
-  height: 36px;
-  border: solid 1px rgb(218, 211, 211);
-  border-radius: 22px;
+  padding-right: 12%;
 }
