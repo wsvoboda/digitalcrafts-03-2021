@@ -55,6 +55,13 @@
   padding-top: 1.2%;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2%;
+}
+
 .leftfooter a {
   color: rgb(145, 142, 142);
   text-decoration: none;
