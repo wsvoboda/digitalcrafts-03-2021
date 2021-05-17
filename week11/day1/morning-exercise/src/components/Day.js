@@ -7,7 +7,15 @@ export default class Day extends Component {
   }
   render() {
     return (
-      <div>
+      <div
+        style={{
+          marginRight: "20px",
+          marginLeft: "20px",
+          backgroundColor: "#F79489",
+          height: "90%",
+          width: "90%",
+        }}
+      >
         <h1>Day.js</h1>
         <p>Today is {this.state.day}</p>
         <button onClick={() => this.setState({ day: "Friday" })}>

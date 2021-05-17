@@ -7,7 +7,15 @@ export default class Counter extends Component {
   }
   render() {
     return (
-      <div>
+      <div
+        style={{
+          marginRight: "20px",
+          marginLeft: "20px",
+          backgroundColor: "#F8AFA6",
+          height: "90%",
+          width: "90%",
+        }}
+      >
         <h1>Counter.js</h1>
         <p>This is the count {this.state.count}</p>
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>

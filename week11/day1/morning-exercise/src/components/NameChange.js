@@ -11,7 +11,15 @@ export default class Name extends Component {
   }
   render() {
     return (
-      <div>
+      <div
+        style={{
+          marginRight: "20px",
+          marginLeft: "20px",
+          backgroundColor: "#F9F1F0",
+          height: "90%",
+          width: "90%",
+        }}
+      >
         <h1>Name.js</h1>
         <p>Your name is {this.state.name}</p>
         <form onSubmit={this.handleSubmit}>
