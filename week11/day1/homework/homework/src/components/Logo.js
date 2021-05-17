@@ -4,7 +4,7 @@ import logo from "../images/logo.png";
 export default class Logo extends Component {
   render() {
     return (
-      <div>
+      <div className="logo">
         <img src={logo} alt="googlelogo" />
       </div>
     );
