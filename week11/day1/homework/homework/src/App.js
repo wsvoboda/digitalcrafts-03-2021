@@ -1,4 +1,5 @@
 import "./App.css";
+import "./fonts/Roboto-Thin.ttf";
 import Navbar from "./components/Navbar";
 import Logo from "./components/Logo";
 import Buttons from "./components/Buttons";

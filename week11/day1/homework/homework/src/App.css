@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: local("Roboto"), url(./fonts/Roboto-Thin.ttf) format("truetype");
+}
+
+.App {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.left-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.left-links a {
+  color: rgb(53, 52, 52);
+  text-decoration: none;
+  margin: 15%;
+  padding-left: 6%;
+}
+
+.right-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-right: 4%;
+}
+
+.right-links a {
+  color: rgb(53, 52, 52);
+  text-decoration: none;
+  margin-right: 12%;
+}
+
+.right-links img {
+  padding-left: 7%;
+}
+
+.leftfooter a {
+  color: rgb(145, 142, 142);
+  text-decoration: none;
+  margin: 2%;
+}
+
+.centerfooter a {
+  color: rgb(145, 142, 142);
+  text-decoration: none;
+  margin: 2%;
+}
+
+.centerfooter img {
+  height: 12px;
+  width: 14px;
+  margin-right: 5px;
+}
+
+.rightfooter a {
+  color: rgb(145, 142, 142);
+  text-decoration: none;
+  margin: 2%;
+}
+
+.buttons button {
+  font-family: "Roboto", sans-serif;
+  border: none;
+  margin: 1%;
+  border-radius: 4px;
+  height: 36px;
+  width: 142px;
+  background-color: rgb(250, 242, 242);
+  color: rgb(53, 52, 52);
+}
+
+.input-bar {
+  width: 40%;
+  height: 36px;
+  border: solid 1px rgb(218, 211, 211);
+  border-radius: 22px;
+}

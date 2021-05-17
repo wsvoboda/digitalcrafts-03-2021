@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import pic from "../images/thumb.png";
+import burger from "../images/menu.PNG";
+import "../App.css";
 
 export default class Navbar extends Component {
   render() {
     return (
-      <div>
+      <div className="navbar">
         <div className="left-links">
           <a
             href={`https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header`}
@@ -20,6 +22,7 @@ export default class Navbar extends Component {
         <div className="right-links">
           <a href={`https://mail.google.com/`}>Gmail</a>
           <a href={`https://www.google.com/imghp?hl=en&ogbl`}>Images</a>
+          <img src={burger} alt="menu" />
           <img src={pic} alt="thumbnail" />
         </div>
       </div>

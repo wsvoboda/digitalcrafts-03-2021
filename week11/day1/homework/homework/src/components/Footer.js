@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import leaf from "../images/leaf.png";
+import "../App.css";
 
 export default class Footer extends Component {
   render() {
