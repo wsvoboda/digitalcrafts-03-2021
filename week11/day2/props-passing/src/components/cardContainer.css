@@ -6,7 +6,6 @@
 }
 .pokemon-card {
   background-image: url("cardback.png");
-  background-color: #9adaba;
   background-size: 200px 20rem;
   height: 20rem;
   width: 12.52rem;
