@@ -4,7 +4,7 @@ import "./cardContainer.css"
 export default class Card extends Component {
     state = { flip: false}
     render() {
-        const {hp,name, sprites} = this.props.pokemon
+        const {hp, name, sprites} = this.props.pokemon
         const uppercased = name.toUpperCase()
         return (
             <div className="pokemon-card">

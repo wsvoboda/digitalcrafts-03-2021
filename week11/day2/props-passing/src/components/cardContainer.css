@@ -4,6 +4,7 @@
   place-content: space-around;
   flex-wrap: wrap;
 }
+
 .pokemon-card {
   background-image: url("cardback.png");
   background-size: 200px 20rem;
@@ -11,6 +12,26 @@
   width: 12.52rem;
   margin: 1rem;
 }
+
 .pokemon-card img {
   margin-top: 3rem;
+}
+
+#berrypic {
+  height: 50px;
+  width: 50px;
+  padding-top: 75px;
+  padding-bottom: 30px;
+}
+
+.berry-card {
+  background-image: url("cardback.png");
+  background-size: 200px 20rem;
+  height: 20rem;
+  width: 12.52rem;
+  margin: 1rem;
+}
+
+.headername {
+  justify-content: center;
 }
