@@ -18,12 +18,48 @@ export default class Form extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  handleSubmit = (event) => {
+    const {
+      firstName,
+      lastName,
+      address,
+      apt,
+      zip,
+      city,
+      state,
+      country,
+      phone,
+    } = this.state;
+    event.preventDefault();
+    const formSubmissionData = {
+      username: firstName + lastName,
+      address:
+        address +
+        " " +
+        apt +
+        " " +
+        city +
+        " " +
+        state +
+        " " +
+        zip +
+        " " +
+        country,
+      phoneNumber: phone,
+    };
+    console.log(formSubmissionData);
+  };
+
   render() {
     return (
       <div>
         <h1 className="shipping-form-header">Forms React</h1>
         <div className="shipping-form-container">
-          <form className="shipping-form">
+          <form
+            action=""
+            className="shipping-form"
+            onSubmit={this.handleSubmit}
+          >
             <input
               className="shipping-input-first-name"
               type="text"

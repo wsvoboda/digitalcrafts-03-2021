@@ -6,7 +6,6 @@ class CardContainer extends Component {
   state = {
     searchCriteria: "",
     pokemonList: [],
-    pokemonBerries: [],
     pokemonName: "",
     hp: "",
     frontUrl: "",
@@ -19,8 +18,8 @@ class CardContainer extends Component {
     });
   }
 
-  searchCriteria = (event) => {
-    const search = event.target.value.toLowerCase();
+  searchCriteria = (e) => {
+    const search = e.target.value.toLowerCase();
     this.setState({
       searchCriteria: search,
     });
@@ -33,10 +32,11 @@ class CardContainer extends Component {
     e.preventDefault();
   };
 
-  onSubmit = (event, filteredData) => {
-    event.preventDefault();
+  onSubmit = (e, filteredData) => {
+    e.preventDefault();
     const newPokemon = {
       name: this.state.pokemonName,
+
       hp: this.state.hp,
       sprites: {
         front: this.state.frontUrl,
@@ -64,9 +64,9 @@ class CardContainer extends Component {
       <div className="main-card-container">
         <div>
           <input
-            name="pokemonName"
+            name="name"
             className="search-field"
-            onChange={(e) => this.searchCriteria(e)}
+            onChange={this.searchCriteria}
             type="text"
             placeholder="Search for a pokemon"
           />
@@ -74,14 +74,14 @@ class CardContainer extends Component {
         {/* form */}
         <div>
           
-          <form onSubmit={(e) => this.onSubmit(e, filteredData)}>
+          <form onSubmit={this.onSubmit}>
             <input
               name="pokemonName"
               className="create-field"
               type="text"
               placeholder="Enter a Name"
               value={this.state.pokemonName}
-              onChange={(e) => this.sendPokemonToData(e)}
+              onChange={this.sendPokemonToData}
             />
             <input
               name="hp"
@@ -89,7 +89,7 @@ class CardContainer extends Component {
               type="text"
               placeholder="Enter a HP"
               value={this.state.hp}
-              onChange={(e) => this.sendPokemonToData(e)}
+              onChange={this.sendPokemonToData}
             />
             <input
               name="frontUrl"
@@ -97,7 +97,7 @@ class CardContainer extends Component {
               type="text"
               placeholder="Enter front URL"
               value={this.state.frontUrl}
-              onChange={(e) => this.sendPokemonToData(e)}
+              onChange={this.sendPokemonToData}
             />
             <input
               name="backUrl"
@@ -105,7 +105,7 @@ class CardContainer extends Component {
               type="text"
               placeholder="Enter back URL"
               value={this.state.backUrl}
-              onChange={(e) => this.sendPokemonToData(e)}
+              onChange={this.sendPokemonToData}
             />
             <input className="create-field" type="submit" value="Submit" />
           </form>
