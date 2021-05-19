@@ -78,11 +78,12 @@ const json = await fetchData.json()
             className="search-field"
             onChange={this.searchCriteria}
             type="text"
-            placeholder="Search for a pokemon"
+            placeholder="Search for a Pokemon"
           />
         </div>
-        <div>
-          
+        <div className="headername">
+          <h1>Pokemon</h1></div>
+          <div>
           <form onSubmit={this.onSubmit}>
             <input
               name="pokemonName"
@@ -118,8 +119,7 @@ const json = await fetchData.json()
             />
             <input className="create-field" type="submit" value="Submit" />
           </form>
-        </div><div className="headername">
-          <h1>Pokemon</h1></div>
+        </div>
         <div className="card-container">
           
           {filteredData.map((singlePokemon, index) => (

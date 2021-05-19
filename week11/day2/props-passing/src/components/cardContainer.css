@@ -35,3 +35,15 @@
 .headername {
   justify-content: center;
 }
+
+.main-card-container input {
+  margin: 5px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid gray;
+  text-align: center;
+}
+
+.main-card-container input:hover {
+  background-color: rgb(226, 223, 230);
+}
