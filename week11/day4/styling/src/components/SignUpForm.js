@@ -6,22 +6,48 @@ import {
 } from "./styledComponents/SignUpFormStyles";
 
 export default function SignUpForm(props) {
-  console.log(props.firstName);
   return (
     <div>
       <h1>Create Account</h1>
-      <SignUpFormCSS action="">
+      <SignUpFormCSS onSubmit={() => props.changeData(props.formData)}>
         <SignUpFormInput
-          onChange={(e) => props.setFirstName(e.target.value)}
+          name="firstName"
+          onChange={(e) =>
+            props.setFormData({ ...props.formData, firstName: e.target.value })
+          }
           type="text"
-          value={props.firstName}
+          value={props.formData.firstName}
           placeholder="First Name"
         />
-        <SignUpFormInput type="text" placeholder="Last Name" />
-        <SignUpFormInput type="email" placeholder="Email" />
+        <SignUpFormInput
+          name="lastName"
+          onChange={(e) =>
+            props.setFormData({ ...props.formData, lastName: e.target.value })
+          }
+          type="text"
+          value={props.formData.lastName}
+          placeholder="Last Name"
+        />
+        <SignUpFormInput
+          onChange={(e) =>
+            props.setFormData({ ...props.formData, email: e.target.value })
+          }
+          name="email"
+          type="email"
+          value={props.formData.email}
+          placeholder="Email"
+        />
         <SignUpFormInput type="password" placeholder="Password" />
-        <SignUpFormInput type="password" placeholder="Re-type Password" />
-        <SignUpButton>SIGN UP</SignUpButton>
+        <SignUpFormInput
+          onChange={(e) =>
+            props.setFormData({ ...props.formData, password: e.target.value })
+          }
+          name="password"
+          type="password"
+          value={props.formData.password}
+          placeholder="Re-type Password"
+        />
+        <SignUpButton type="submit">SIGN UP</SignUpButton>
       </SignUpFormCSS>
     </div>
   );
