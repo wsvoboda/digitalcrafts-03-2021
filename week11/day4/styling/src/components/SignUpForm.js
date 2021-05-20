@@ -5,50 +5,51 @@ import {
   SignUpFormCSS,
 } from "./styledComponents/SignUpFormStyles";
 
-export default function SignUpForm(props) {
+export default function SignUpForm({ formData, setFormData, changeData }) {
   return (
     <div>
       <h1>Create Account</h1>
-      <SignUpFormCSS onSubmit={() => props.changeData(props.formData)}>
+      <SignUpFormCSS>
         <SignUpFormInput
-          name="firstName"
           onChange={(e) =>
-            props.setFormData({ ...props.formData, firstName: e.target.value })
+            setFormData({ ...formData, firstName: e.target.value })
           }
           type="text"
-          value={props.formData.firstName}
+          value={formData.firstName}
           placeholder="First Name"
         />
         <SignUpFormInput
-          name="lastName"
           onChange={(e) =>
-            props.setFormData({ ...props.formData, lastName: e.target.value })
+            setFormData({ ...formData, lastName: e.target.value })
           }
           type="text"
-          value={props.formData.lastName}
+          value={formData.lastName}
           placeholder="Last Name"
         />
         <SignUpFormInput
-          onChange={(e) =>
-            props.setFormData({ ...props.formData, email: e.target.value })
-          }
-          name="email"
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           type="email"
-          value={props.formData.email}
+          value={formData.email}
           placeholder="Email"
         />
-        <SignUpFormInput type="password" placeholder="Password" />
         <SignUpFormInput
           onChange={(e) =>
-            props.setFormData({ ...props.formData, password: e.target.value })
+            setFormData({ ...formData, password: e.target.value })
           }
-          name="password"
           type="password"
-          value={props.formData.password}
-          placeholder="Re-type Password"
+          value={formData.password}
+          placeholder="Password"
         />
-        <SignUpButton type="submit">SIGN UP</SignUpButton>
+        <SignUpFormInput
+          onChange={(e) =>
+            setFormData({ ...formData, retypedPassword: e.target.value })
+          }
+          type="password"
+          value={formData.retypedPassword}
+          placeholder="Re-Type Password"
+        />
       </SignUpFormCSS>
+      <SignUpButton onClick={() => changeData(formData)}>SIGN UP</SignUpButton>
     </div>
   );
 }

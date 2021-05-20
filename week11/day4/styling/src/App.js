@@ -4,28 +4,21 @@ import { AppStyle } from "./components/styledComponents/AppStyles";
 import SignUpForm from "./components/SignUpForm";
 import UserDetails from "./components/UserDetails";
 
+const emptyForm = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  retypedPassword: "",
+};
+
 function App() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState(emptyForm);
+  const [userData, setUserData] = useState(emptyForm);
 
-  const [userData, setUserData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
-
-  const changeData = (formData) => {
-    setUserData({
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      password: formData.password,
-    });
+  const changeData = (formInfo) => {
+    setUserData(formInfo);
+    setFormData(emptyForm);
   };
 
   return (
