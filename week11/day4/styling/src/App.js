@@ -5,7 +5,7 @@ import FunctionBased from "./components/FunctionBased";
 function App() {
   return (
     <div className="App">
-      <ClassBased />
+      {/* <ClassBased /> */}
       <FunctionBased />
     </div>
   );
