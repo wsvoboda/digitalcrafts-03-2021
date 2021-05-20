@@ -1,13 +1,16 @@
 import "./App.css";
-import ClassBased from "./components/ClassBased";
-import FunctionBased from "./components/FunctionBased";
+import React, { useState } from "react";
+import { AppStyle } from "./components/styledComponents/AppStyles";
+import SignUpForm from "./components/SignUpForm";
+import UserDetails from "./components/UserDetails";
 
 function App() {
+  const [firstName, setFirstName] = useState("");
   return (
-    <div className="App">
-      {/* <ClassBased /> */}
-      <FunctionBased />
-    </div>
+    <AppStyle className="App">
+      <SignUpForm firstName={firstName} setFirstName={setFirstName} />
+      <UserDetails />
+    </AppStyle>
   );
 }
 
