@@ -13,7 +13,7 @@ export default function Search(props) {
       ></input>
       <button
         onClick={() => {
-          props.searchMovies();
+          props.searchMovies(props.searchCriteria);
         }}
       >
         Search
