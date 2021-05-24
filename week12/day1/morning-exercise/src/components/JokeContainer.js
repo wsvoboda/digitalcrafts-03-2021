@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Jokes from "./Jokes";
 
 export default function JokeContainer() {
-  const [dadJoke, setDadJoke] = useState("");
+  const [dadJokes, setDadJokes] = useState([]);
 
   // will fire every time anything changes on page
 
@@ -19,23 +19,27 @@ export default function JokeContainer() {
   // will fire just one time
 
   useEffect(() => {
-    getDadJoke();
+    getDadJokes();
   }, []);
 
-  const getDadJoke = async () => {
-    const jokeURL = "https://icanhazdadjoke.com/";
-    const fetchData = await fetch(jokeURL, {
+  const getDadJokes = async () => {
+    const fetchData = await fetch("https://icanhazdadjoke.com/", {
       headers: {
         Accept: "application/json",
       },
     });
     const json = await fetchData.json();
-    setDadJoke(json.joke);
+    setDadJokes([...dadJokes, json.joke]);
+    dadJokes.push(json.joke);
   };
   return (
     <div>
       <h1>Joke Container</h1>
-      <Jokes dadJoke={dadJoke} />
+      {dadJokes.map((joke) => (
+        <Jokes dadJoke={joke} setDadJokes={setDadJokes} />
+      ))}
+      <button onClick={() => getDadJokes()}>New Joke</button>
+      <button onClick={() => setDadJokes([])}>Clear Jokes</button>
     </div>
   );
 }
