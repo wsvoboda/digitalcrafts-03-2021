@@ -45,7 +45,13 @@ function App() {
         movieRating={movieRating}
         movieImage={movieImage}
       />
-      <Search />
+      <Search
+        searchCriteria={searchCriteria}
+        setSearchCriteria={setSearchCriteria}
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
+        searchMovies={searchMovies}
+      />
     </div>
   );
 }
