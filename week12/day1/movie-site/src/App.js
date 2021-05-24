@@ -3,6 +3,7 @@ import "./App.css";
 import FirstMovie from "./components/FirstMovie";
 import Search from "./components/Search";
 import APIKey from "./components/API";
+import AllSearchedMovies from "./components/AllSearchedMovies";
 
 function App() {
   const [movieTitle, setMovieTitle] = useState("");
@@ -30,11 +31,10 @@ function App() {
 
   const searchMovies = async (searchCriteria) => {
     const fetchData = await fetch(
-      `http://www.omdbapi.com/?s=${searchCriteria}&apikey=${APIKey}`
+      `http://www.omdbapi.com/?s=${searchCriteria}&type=movie&apikey=${APIKey}`
     );
     const json = await fetchData.json();
     setSearchResults(json.Search);
-    console.log(json);
   };
 
   return (
@@ -52,6 +52,9 @@ function App() {
         setSearchResults={setSearchResults}
         searchMovies={searchMovies}
       />
+      {searchResults.map((movie) => (
+        <AllSearchedMovies movie={movie} />
+      ))}
     </div>
   );
 }
