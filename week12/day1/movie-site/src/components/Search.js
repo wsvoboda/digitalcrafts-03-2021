@@ -21,6 +21,7 @@ export default function Search(props) {
       >
         Search
       </button>
+      <h5>{props.searchOutput}</h5>
     </div>
   );
 }

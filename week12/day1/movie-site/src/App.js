@@ -13,7 +13,7 @@ function App() {
 
   const [searchCriteria, setSearchCriteria] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [searchPosters, setSearchPosters] = useState([]);
+  const [searchOutput, setSearchOutput] = useState("");
 
   useEffect(() => {
     getFirstMovie();
@@ -37,18 +37,18 @@ function App() {
       );
       const json = await fetchData.json();
       const allData = json.Search;
-      allData.map((oneMovie) =>
-        setSearchPosters(...searchPosters, oneMovie.Poster)
-      );
       if (json.Search !== undefined) {
+        setSearchOutput("");
         setSearchResults(allData);
+        setSearchCriteria("");
       } else {
-        alert("No movies found with that title!");
+        setSearchResults([]);
+        setSearchOutput("No movies found with that title!");
       }
     } else {
-      alert("Enter a Movie Title!");
+      setSearchResults([]);
+      setSearchOutput("Enter a Movie Title!");
     }
-    setSearchCriteria("");
   };
 
   return (
@@ -65,6 +65,7 @@ function App() {
         searchResults={searchResults}
         setSearchResults={setSearchResults}
         searchMovies={searchMovies}
+        searchOutput={searchOutput}
       />
       <div className="all-searched-movies">
         {searchResults.map((movie) => (
