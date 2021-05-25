@@ -1,11 +1,14 @@
 import React from "react";
+import "../App.css";
 
 export default function AllSearchedMovies(props) {
   return (
-    <div>
-      <h3>{props.movie.Title}</h3>
-      <h4>{props.movie.Year}</h4>
-      <img src={props.movie.Poster} alt="movie poster" />
+    <div className="all-movies">
+      <div className="one-movie">
+        <h3>{props.movie.Title}</h3>
+        <h5>{props.movie.Year}</h5>
+        <img src={props.movie.Poster} alt="movie poster" />
+      </div>
     </div>
   );
 }

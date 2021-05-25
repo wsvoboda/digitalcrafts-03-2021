@@ -1,8 +1,9 @@
 import React from "react";
+import "../App.css";
 
 export default function Search(props) {
   return (
-    <div>
+    <div className="search">
       <h1>Search</h1>
       <input
         type="text"
@@ -10,6 +11,7 @@ export default function Search(props) {
         onChange={(e) => {
           props.setSearchCriteria(e.target.value);
         }}
+        required
       ></input>
       <button
         onClick={() => {

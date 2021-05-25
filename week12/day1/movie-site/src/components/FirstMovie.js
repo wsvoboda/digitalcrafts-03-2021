@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FirstMovie(props) {
   return (
-    <div className="singleMovie">
+    <div className="one-movie">
       <h1>Featured Movie</h1>
       <h2>{props.movieTitle}</h2>
       <h6>{props.movieRating}</h6>

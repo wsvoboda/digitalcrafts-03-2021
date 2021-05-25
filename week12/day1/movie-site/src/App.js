@@ -30,11 +30,15 @@ function App() {
   };
 
   const searchMovies = async (searchCriteria) => {
-    const fetchData = await fetch(
-      `http://www.omdbapi.com/?s=${searchCriteria}&type=movie&apikey=${APIKey}`
-    );
-    const json = await fetchData.json();
-    setSearchResults(json.Search);
+    if (searchCriteria !== "") {
+      const fetchData = await fetch(
+        `http://www.omdbapi.com/?s=${searchCriteria}&type=movie&apikey=${APIKey}`
+      );
+      const json = await fetchData.json();
+      setSearchResults(json.Search);
+    } else {
+      alert("Enter a Movie Title!");
+    }
   };
 
   return (
@@ -52,9 +56,11 @@ function App() {
         setSearchResults={setSearchResults}
         searchMovies={searchMovies}
       />
-      {searchResults.map((movie) => (
-        <AllSearchedMovies movie={movie} />
-      ))}
+      <div class="all-searched-movies">
+        {searchResults.map((movie) => (
+          <AllSearchedMovies movie={movie} />
+        ))}
+      </div>
     </div>
   );
 }
