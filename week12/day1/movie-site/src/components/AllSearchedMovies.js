@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import genericPhoto from "../images/movie.png";
+// import genericPhoto from "../images/movie.png";
 
 export default function AllSearchedMovies(props) {
   return (

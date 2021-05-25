@@ -11,6 +11,7 @@ export default function Search(props) {
         onChange={(e) => {
           props.setSearchCriteria(e.target.value);
         }}
+        value={props.searchCriteria}
         required
       ></input>
       <button

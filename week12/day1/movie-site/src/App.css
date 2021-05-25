@@ -38,3 +38,8 @@
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+
+.featured-movie {
+  margin: auto;
+  width: 75vh;
+}

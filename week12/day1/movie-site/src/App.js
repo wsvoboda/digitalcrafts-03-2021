@@ -48,6 +48,7 @@ function App() {
     } else {
       alert("Enter a Movie Title!");
     }
+    setSearchCriteria("");
   };
 
   return (
