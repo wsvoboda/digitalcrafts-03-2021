@@ -35,7 +35,11 @@ function App() {
         `http://www.omdbapi.com/?s=${searchCriteria}&type=movie&apikey=${APIKey}`
       );
       const json = await fetchData.json();
-      setSearchResults(json.Search);
+      if (json.Search !== undefined) {
+        setSearchResults(json.Search);
+      } else {
+        alert("No movies found with that title!");
+      }
     } else {
       alert("Enter a Movie Title!");
     }
@@ -56,7 +60,7 @@ function App() {
         setSearchResults={setSearchResults}
         searchMovies={searchMovies}
       />
-      <div class="all-searched-movies">
+      <div className="all-searched-movies">
         {searchResults.map((movie) => (
           <AllSearchedMovies movie={movie} />
         ))}

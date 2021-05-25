@@ -14,6 +14,13 @@
   border-radius: 5px;
   margin: 10px;
   padding: 1rem;
+  width: 334px;
+  height: 600px;
+}
+
+.one-movie img {
+  height: 450px;
+  width: 300px;
 }
 
 .search input {
