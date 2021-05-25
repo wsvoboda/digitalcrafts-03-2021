@@ -13,6 +13,7 @@ function App() {
 
   const [searchCriteria, setSearchCriteria] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [searchPosters, setSearchPosters] = useState([]);
 
   useEffect(() => {
     getFirstMovie();
@@ -35,8 +36,12 @@ function App() {
         `http://www.omdbapi.com/?s=${searchCriteria}&type=movie&apikey=${APIKey}`
       );
       const json = await fetchData.json();
+      const allData = json.Search;
+      allData.map((oneMovie) =>
+        setSearchPosters(...searchPosters, oneMovie.Poster)
+      );
       if (json.Search !== undefined) {
-        setSearchResults(json.Search);
+        setSearchResults(allData);
       } else {
         alert("No movies found with that title!");
       }
