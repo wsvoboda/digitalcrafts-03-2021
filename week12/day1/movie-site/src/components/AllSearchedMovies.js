@@ -6,8 +6,8 @@ export default function AllSearchedMovies(props) {
   return (
     <div className="all-movies">
       <div className="one-movie">
-        <h3>{props.movie.Title}</h3>
-        <h5>{props.movie.Year}</h5>
+        <h2>{props.movie.Title}</h2>
+        <h3>{props.movie.Year}</h3>
         <img src={props.movie.Poster} alt="movie poster" />
       </div>
     </div>
