@@ -4,16 +4,17 @@ import "../App.css";
 export default function Search(props) {
   return (
     <div className="search">
-      <h1>Search</h1>
+      <h1>Search for More Movies</h1>
       <input
         type="text"
-        placeholder="Search for a Movie"
+        placeholder="Enter Movie Title"
         onChange={(e) => {
           props.setSearchCriteria(e.target.value);
         }}
         value={props.searchCriteria}
         required
       ></input>
+      <br></br>
       <button
         onClick={() => {
           props.searchMovies(props.searchCriteria);
