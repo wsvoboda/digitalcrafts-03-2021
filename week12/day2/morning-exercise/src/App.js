@@ -17,7 +17,7 @@ function App() {
       <h1>Routes</h1>
       <Router>
         <div>
-          <nav>
+          <nav className="navbar">
             <Link to="/">Home</Link>
             <Link to="/aboutme">About Me</Link>
             <Link to="/blog">Blog</Link>
