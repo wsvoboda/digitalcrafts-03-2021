@@ -64,9 +64,6 @@ const tickets = (peopleInLine) => {
   console.log(cache);
 };
 
-//   for (let i = 0; i < peopleInLine.length; i++) {
-//     if (peopleInLine[i] === 25) {
-//         cache
-//     }
+// need more testing on cases with 25 and 100 only. Other cases working.
 
 tickets(peopleInLine);
