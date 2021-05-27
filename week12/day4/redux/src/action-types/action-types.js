@@ -1,0 +1,3 @@
+export const INSERT_FAKE_JOE = "INSERT_FAKE_JOE";
+export const ADD_GOVT_OFFICIAL = "ADD_GOVT_OFFICIAL";
+export const REMOVE_ELON = "REMOVE_ELON";
