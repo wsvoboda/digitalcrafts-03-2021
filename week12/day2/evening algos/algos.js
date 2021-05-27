@@ -11,7 +11,7 @@
 // tickets([25, 100]) // => NO
 // tickets([25, 25, 50, 50, 100]) // => NO
 
-let peopleInLine = [25, 25, 25, 25, 100];
+let peopleInLine = [25, 25, 50, 50, 100];
 
 let ticketPrice = 25;
 let possibleBill1 = 25;
@@ -45,15 +45,15 @@ const tickets = (peopleInLine) => {
         }
       }
       if (peopleInLine[i] === 100) {
-        if (cache[50] < 1 || cache[25] < 3) {
+        if ((cache[50] && cache[50] < 1) || cache[25] < 3) {
           console.log("NO change for 100");
         } else {
-          if (cache[50] > 0 && cache[25] > 0) {
+          if (cache[50] && cache[50] > 0 && cache[25] > 0) {
             cache[50] -= 1;
             cache[25] -= 1;
             console.log("YES, change for 100");
           }
-          if (cache[50] === 0 && cache[25] > 3) {
+          if ((cache[50] && cache[50] === 0) || cache[25] > 3) {
             cache[25] -= 3;
             console.log("YES, change for 100");
           }
