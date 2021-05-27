@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { fillArrayWithData } from "../actions/fill-array-action";
 
 export default function FillArray() {
   const newArray = useSelector((state) => state.newArray);
@@ -10,9 +11,7 @@ export default function FillArray() {
       {newArray.map((person) => (
         <p>{person.name}</p>
       ))}
-      <button onClick={() => dispatch({ type: "FILL_ARRAY" })}>
-        Fill Array
-      </button>
+      <button onClick={() => fillArrayWithData(dispatch)}>Fill Array</button>
     </div>
   );
 }
