@@ -11,7 +11,11 @@
 // tickets([25, 100]) // => NO
 // tickets([25, 25, 50, 50, 100]) // => NO
 
-let peopleInLine = [25, 25, 50, 50, 100];
+// let peopleInLine = [25, 50, 25, 100, 25, 25, 50, 100, 25, 25, 25, 100]; // YES
+let peopleInLine = [
+  25, 50, 25, 100, 25, 25, 50, 100, 25, 25, 50, 100, 25, 25, 25, 100, 25, 50,
+  50, 100,
+]; // NO
 
 let ticketPrice = 25;
 let possibleBill1 = 25;
@@ -19,51 +23,39 @@ let possibleBill2 = 50;
 let possibleBill3 = 100;
 
 const tickets = (peopleInLine) => {
-  let cache = {};
+  let cache = {
+    25: 0,
+    50: 0,
+    100: 0,
+  };
   if (peopleInLine[0] !== 25) {
-    console.log("NO change for others if first person is not 25");
+    return "NO";
   } else {
     for (let i = 0; i < peopleInLine.length; i++) {
       if (peopleInLine[i] === 25) {
-        if (!cache[25]) {
-          cache[25] = 1;
-        } else {
-          cache[25] += 1;
-        }
+        cache[25] += 1;
       }
       if (peopleInLine[i] === 50) {
-        if (!cache[25]) {
-          console.log("NO change for 50");
-        } else {
-          cache[25] -= 1;
-          if (!cache[50]) {
-            cache[50] = 1;
-          } else {
-            cache[50] += 1;
-          }
-          console.log("YES, change for 50");
+        cache[25] -= 1;
+        cache[50] += 1;
+        if (cache[25] < 0) {
+          return "NO";
         }
       }
       if (peopleInLine[i] === 100) {
-        if ((cache[50] && cache[50] < 1) || cache[25] < 3) {
-          console.log("NO change for 100");
+        if (cache[50] > 0) {
+          cache[50] -= 1;
+          cache[25] -= 1;
         } else {
-          if (cache[50] && cache[50] > 0 && cache[25] > 0) {
-            cache[50] -= 1;
-            cache[25] -= 1;
-            console.log("YES, change for 100");
-          }
-          if ((cache[50] && cache[50] === 0) || cache[25] > 3) {
-            cache[25] -= 3;
-            console.log("YES, change for 100");
-          }
+          cache[25] -= 3;
+        }
+        if (cache[25] < 0) {
+          return "NO";
         }
       }
     }
   }
-  console.log(cache);
+  return "YES";
 };
 
-// need more testing on cases with 25 and 100 only. Other cases working.
-
-tickets(peopleInLine);
+console.log(tickets(peopleInLine));
