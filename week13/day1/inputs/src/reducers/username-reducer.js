@@ -5,7 +5,7 @@ const initialState = "Username";
 const username = (state = initialState, action) => {
   switch (action.type) {
     case POST_USERNAME:
-      return (state = "Whitney");
+      return (state = action.payload);
     default:
       return state;
   }

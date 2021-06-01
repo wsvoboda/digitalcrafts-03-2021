@@ -12,15 +12,15 @@ export default function Login() {
       <input
         type="text"
         placeholder="Username"
-        onChange={() => {
-          postUsername(dispatch);
+        onChange={(e) => {
+          postUsername(dispatch, e.target.value);
         }}
       />
       <input
         type="text"
         placeholder="Email"
-        onChange={() => {
-          postEmail(dispatch);
+        onChange={(e) => {
+          postEmail(dispatch, e.target.value);
         }}
       />
       <button>Submit</button>

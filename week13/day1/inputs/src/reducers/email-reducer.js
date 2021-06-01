@@ -5,7 +5,7 @@ const initialState = "Email";
 const email = (state = initialState, action) => {
   switch (action.type) {
     case POST_EMAIL:
-      return (state = "Whitney");
+      return (state = action.payload);
     default:
       return state;
   }
